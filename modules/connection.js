@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-app.use(express.json())
 
 const { MONGO_URI } = process.env
 mongoose.set('strictQuery', false)
