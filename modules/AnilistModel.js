@@ -1,6 +1,6 @@
 const mongoose = require('./connection')
 
-const AnilistSchema = new mongoose.schema({
+const AnilistSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String },
   genre: { type: [String], required: true },
