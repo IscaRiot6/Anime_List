@@ -61,6 +61,17 @@ app.post('/login', async (req, res) => {
   }
 })
 
+app.post('/verify', async (req, res) => {
+  jwt.verify(req.body.token, process.env.TOKEN_KEY, async (err, payload) => {
+    if (payload) {
+      let user = await User.findOne({ _id: payload.id })
+      res.send(user)
+    } else {
+      res.send({ message: 'session expired' })
+    }
+  })
+})
+
 app.listen(port, () => {
   console.log(`Server started on port ${port}`)
 })
