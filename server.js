@@ -42,11 +42,24 @@ app.post('/signup', async (req, res) => {
   }
 })
 
-// app.post('/login', async (req, res) => {
-//   let user = await User.findOne({ username: req.body.username })
-//     if (user) {
-//       res.send({ message: 'The user already exists' })
-// })
+app.post('/login', async (req, res) => {
+  // Check if user exists
+  let user = await User.findOne({ username: req.body.username })
+  if (user) {
+    bcrypt.compare(req.body.password, user.password, function (err, result) {
+      if (result) {
+        let token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, {
+          expiresIn: process.env.TOKEN_EXPIRES_IN
+        })
+        res.send({ token })
+      } else {
+        res.send({ message: 'Wrong password' })
+      }
+    })
+  } else {
+    return res.status(400).json({ message: 'Wrong username' })
+  }
+})
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`)
