@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('./modules/connection')
 
 const app = express()
-const port = process.env.PORT || 6000
+const port = process.env.PORT || 8000
 const jwt = require('jsonwebtoken')
 
 const User = require('./modules/userModel')
@@ -12,6 +12,14 @@ const bcrypt = require('bcrypt')
 // Bodyparser Middleware
 const bodyparser = require('body-parser')
 app.use(bodyparser.json())
+
+// Pick which application has acces to the server
+const cors = require('cors')
+app.use(
+  cors({
+    origin: '*'
+  })
+)
 
 app.post('/signup', async (req, res) => {
   if (!req.body.email || !req.body.username || !req.body.password) {
@@ -62,6 +70,7 @@ app.post('/login', async (req, res) => {
 })
 
 app.post('/verify', async (req, res) => {
+  //decrypt the token and get ID
   jwt.verify(req.body.token, process.env.TOKEN_KEY, async (err, payload) => {
     if (payload) {
       let user = await User.findOne({ _id: payload.id })
@@ -70,6 +79,47 @@ app.post('/verify', async (req, res) => {
       res.send({ message: 'session expired' })
     }
   })
+})
+
+// app.post('/verify', async (req, res) => {
+//   jwt.verify(req.body.token, process.env.TOKEN_KEY, async (err, decoded) => {
+//     if (err) {
+//       res.send({ message: 'session expired' })
+//     } else {
+//       let userId = decoded.id
+//       // use the id to get the data of the user
+//       let user = await User.findOne({ _id: userId })
+//       let token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, {
+//         expiresIn: process.env.TOKEN_EXPIRES_IN
+//       })
+//       // return the user
+//       let data = {
+//         username: user.username,
+//         token: token
+//       }
+//       res.send(data)
+//     }
+//   })
+// })
+
+app.post('/anime', async (req, res) => {
+  let newAnime = new Anilist({
+    title: req.body.title,
+    genre: req.body.genre,
+    user: req.body.user
+  })
+  await newAnime.save()
+  res.send({ message: 'Anime has been added successfully' })
+})
+
+app.get('/anime', async (req, res) => {
+  let animes = await Anilist.find({ user: req.params.id })
+  res.send({ list: animes })
+})
+
+app.delete('/anime/:id', async (req, res) => {
+  await Anilist.findOneAndDelete({ _id: req.params.id })
+  res.send({ message: 'Anime deleted' })
 })
 
 app.listen(port, () => {
