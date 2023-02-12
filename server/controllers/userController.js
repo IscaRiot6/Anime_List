@@ -9,7 +9,7 @@ const signupUser = async (req, res) => {
     // Check if user exists
     let user = await User.findOne({ email: req.body.email })
     if (user) {
-      return res.status(400).json({ message: 'User already exists' })
+      res.send({ message: 'User already exists' })
     } else {
       // Create hash and salt
       bcrypt.hash(req.body.password, 10, async (err, hash) => {
@@ -67,3 +67,5 @@ module.exports = {
   loginUser,
   verifyUser
 }
+
+// return res.status(400).json({ message: 'User already exists' })

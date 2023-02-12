@@ -31,3 +31,6 @@ app.listen(port, () => {
 
 // app.use(express.json())
 //  const { email, username, password } = req.body;
+
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())

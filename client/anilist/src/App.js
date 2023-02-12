@@ -1,12 +1,16 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import {
-  BrowseRouter as Router,
+  BrowserRouter as Router,
   Route,
   Routes,
   useNavigate
 } from 'react-router-dom'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+import Signup from './components/SignUp'
+import Login from './components/Login'
+import Anilist from './components/Anilist'
+// import axios from 'axios'
+// import { useState, useEffect } from 'react'
 
 function App () {
   return (
@@ -14,9 +18,10 @@ function App () {
       <Router>
         <div>
           <Routes>
-            <Route path='/signup' element={<h1> this is signup</h1>} />
-            <Route path='/login' element={<h1> this is login</h1>} />
-            <Route path='/profile' element={<h1> this is profile</h1>} />
+            <Route path='/' element={<Signup />} />
+
+            <Route path='/login' element={<Login />} />
+            <Route path='/anilist' element={<Anilist />} />
           </Routes>
         </div>
       </Router>
