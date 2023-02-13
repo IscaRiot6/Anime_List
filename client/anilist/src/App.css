@@ -2,7 +2,7 @@
 
 * > * {
     font-family: "Poppins", cursive;
-    margin: 0;
+    margin: 0 auto;
 }
 
 body{
@@ -13,12 +13,18 @@ body{
 }
 
 .App {
+  /* margin: 0 auto; */
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+/* h2, span{
+  text-decoration-color: #302b63;
+  text-shadow: #003049;
+  text-overflow: ellipsis;
+} */
 
 .register{
   max-width: 978px;
@@ -26,11 +32,23 @@ body{
   display:flex;
   border: 1px solid #e9ecef;
   border-radius: 5px;
-  /* box-shadow: 1px 3px 10px #e9ecef; */
+  box-shadow: 1px 3px 10px #e9ecef;
   background-color: white;
 }
 
-.register span{
+/* .register h2{
+  border-width: 5cap;
+} */
+
+#test{
+  width: max-content;
+}
+
+#test-2{
+  width: max-content !important;
+}
+
+.register p{
   color: #adb5bd;
   /* text-align: center; */
 }

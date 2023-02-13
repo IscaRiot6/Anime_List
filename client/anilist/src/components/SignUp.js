@@ -31,8 +31,8 @@ function Signup () {
     <section>
       <div className='register'>
         <div className='col-1'>
-          <h2>Sign Up</h2>
-          <span>Register to enjoy your ani-list</span>
+          <h2 id='test'>Sign Up</h2>
+          <p id='test-2'>Register to enjoy your ani-list</p>
           <form id='form' className='flex flex-col'>
             <input
               onChange={e => {
