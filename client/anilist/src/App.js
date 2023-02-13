@@ -9,6 +9,7 @@ import {
 import Signup from './components/SignUp'
 import Login from './components/Login'
 import Anilist from './components/Anilist'
+import './App.css'
 // import axios from 'axios'
 // import { useState, useEffect } from 'react'
 

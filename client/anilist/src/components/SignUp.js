@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import BgImg from '../assets/img1.jpg'
 
 function Signup () {
   const [email, setEmail] = useState('')
@@ -27,47 +28,49 @@ function Signup () {
   }
 
   return (
-    <div>
-      Email:
-      <input
-        onChange={e => {
-          setEmail(e.target.value)
-        }}
-        type='text'
-        placeholder='Please insert your email'
-      />
-      Username:
-      <input
-        onChange={e => {
-          setUsername(e.target.value)
-        }}
-        type='text'
-        placeholder='Please insert your Username'
-      />
-      Password
-      <input
-        onChange={e => {
-          setPassword(e.target.value)
-        }}
-        type='password'
-        placeholder='Password'
-      />
-      {/* Confirm Password
-      <input
-        onChange={e => {
-          setConfirm(e.target.value)
-        }}
-        type='password'
-        placeholder='Confirm Password'
-      /> */}
-      <button
-        onClick={() => {
-          signup()
-        }}
-      >
-        Create Account
-      </button>
-    </div>
+    <section>
+      <div className='register'>
+        <div className='col-1'>
+          <h2>Sign Up</h2>
+          <span>Register to enjoy your ani-list</span>
+          <form id='form' className='flex flex-col'>
+            <input
+              onChange={e => {
+                setEmail(e.target.value)
+              }}
+              type='text'
+              placeholder='Email'
+            />
+            <input
+              onChange={e => {
+                setUsername(e.target.value)
+              }}
+              type='text'
+              placeholder='Username'
+            />
+            <input
+              onChange={e => {
+                setPassword(e.target.value)
+              }}
+              type='Password'
+              placeholder='Password'
+            />
+            <input type='password' placeholder='Confirm Password' />
+            <button
+              className='btn'
+              onClick={() => {
+                signup()
+              }}
+            >
+              Create Account
+            </button>
+          </form>
+        </div>
+        <div className='col-2'>
+          <img src={BgImg} alt='Kakashi' />
+        </div>
+      </div>
+    </section>
   )
 }
 
