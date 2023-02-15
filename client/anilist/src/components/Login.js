@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import BgImg2 from '../assets/img4.jpg'
 
 function Login () {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  // const [confirm, setConfirm] = useState('')
+
   const navigate = useNavigate()
 
   function login () {
@@ -13,11 +14,10 @@ function Login () {
       .post('http://localhost:8000/user/login', {
         username,
         password
-        // confirm
       })
       .then(({ data }) => {
         if (data.token) {
-          localStorage.setItem(process.env.TOKEN_KEY, data.token)
+          localStorage.setItem('token', data.token)
           navigate('/anilist')
         } else {
           alert(data.message)
@@ -26,39 +26,42 @@ function Login () {
   }
 
   return (
-    <div>
-      Username:
-      <input
-        onChange={e => {
-          setUsername(e.target.value)
-        }}
-        type='text'
-        placeholder='Please insert your Username'
-      />
-      Password
-      <input
-        onChange={e => {
-          setPassword(e.target.value)
-        }}
-        type='password'
-        placeholder='Password'
-      />
-      {/* Confirm Password
-      <input
-        onChange={e => {
-          setConfirm(e.target.value)
-        }}
-        type='password'
-        placeholder='Confirm Password'
-      /> */}
-      <button
-        onClick={() => {
-          login()
-        }}
-      >
-        Log in
-      </button>
-    </div>
+    <section>
+      <div className='register'>
+        <div className='col-1'>
+          <h2>Login</h2>
+          <p className='test-2'>Login here to join Ani-list</p>
+          <form id='form-2' className='flex flex-col'>
+            <input
+              onChange={e => {
+                setUsername(e.target.value)
+              }}
+              type='text'
+              placeholder='Username'
+            />
+            <input
+              onChange={e => {
+                setPassword(e.target.value)
+              }}
+              type='password'
+              placeholder='Password'
+            />
+            <button
+              type='button'
+              className='btn'
+              onClick={() => {
+                login()
+              }}
+            >
+              Log in
+            </button>
+          </form>
+        </div>
+        <div className='col-2'>
+          <img src={BgImg2} alt='' />
+        </div>
+      </div>
+    </section>
   )
 }
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
 
 * > * {
     font-family: "Poppins", cursive;
@@ -9,8 +9,10 @@ body{
   background: #0f0c29; 
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+
 }
+
+
 
 .App {
   /* margin: 0 auto; */
@@ -44,7 +46,7 @@ body{
   width: max-content;
 }
 
-#test-2{
+.test-2{
   width: max-content !important;
 }
 
@@ -59,7 +61,18 @@ body{
   margin: 2em auto;
 }
 
+#form-2{
+  max-width: 320px;
+  width: 100vw;
+  margin: 2em auto;
+}
+
 #form >  input, .btn{
+  border: 1px solid #e9ecef;
+  padding: .9em 1em;
+}
+
+#form-2 >  input, .btn{
   border: 1px solid #e9ecef;
   padding: .9em 1em;
 }
@@ -69,6 +82,17 @@ body{
 }
 
 #form > .btn{
+  background-color: #003049;
+  color: #e9ecef;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#form-2 > input:focus{
+  outline: none;
+}
+
+#form-2 > .btn{
   background-color: #003049;
   color: #e9ecef;
   font-size: 1em;
@@ -103,4 +127,10 @@ body{
   .register .col-2 img{
     display: initial;
   }
+}
+
+/* anilist css */
+
+#anime-items {
+  display: flex;
 }

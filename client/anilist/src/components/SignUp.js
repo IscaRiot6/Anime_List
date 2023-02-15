@@ -7,23 +7,30 @@ function Signup () {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  // const [confirm, setConfirm] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const navigate = useNavigate()
 
   function signup () {
+    if (password !== confirmPassword) {
+      alert('Passwords do not match')
+      return
+    }
     axios
       .post('http://localhost:8000/user/signup', {
         email,
         username,
         password
-        // confirm
       })
       .then(({ data }) => {
+        // console.log(data)
         if (data.message === true) {
           navigate('/login')
         } else {
           alert(data.message)
         }
+      })
+      .catch(error => {
+        console.log(error)
       })
   }
 
@@ -32,7 +39,7 @@ function Signup () {
       <div className='register'>
         <div className='col-1'>
           <h2 id='test'>Sign Up</h2>
-          <p id='test-2'>Register to enjoy your ani-list</p>
+          <p className='test-2'>Register to enjoy your ani-list</p>
           <form id='form' className='flex flex-col'>
             <input
               onChange={e => {
@@ -52,11 +59,18 @@ function Signup () {
               onChange={e => {
                 setPassword(e.target.value)
               }}
-              type='Password'
+              type='password'
               placeholder='Password'
             />
-            <input type='password' placeholder='Confirm Password' />
+            <input
+              onChange={e => {
+                setConfirmPassword(e.target.value)
+              }}
+              type='password'
+              placeholder='Confirm Password'
+            />
             <button
+              type='button'
               className='btn'
               onClick={() => {
                 signup()

@@ -3,16 +3,18 @@ const Anilist = require('../modules/anilistModel')
 const addAnime = async (req, res) => {
   let newAnime = new Anilist({
     title: req.body.title,
+    description: req.body.description,
     genre: req.body.genre,
+    imageUrl: req.body.imageUrl,
     user: req.body.user
   })
   await newAnime.save()
-  res.send({ message: 'Anime has been added successfully' })
+  return res.json(newAnime)
 }
 
 const getAnime = async (req, res) => {
-  let animes = await Anilist.find({ user: req.params.id })
-  res.send({ list: animes })
+  let animes = await Anilist.find({ user: req.params._id })
+  return res.json({ list: animes })
 }
 
 const deleteAnime = async (req, res) => {
