@@ -18,7 +18,7 @@ function Login () {
       .then(({ data }) => {
         if (data.token) {
           localStorage.setItem('token', data.token)
-          navigate('/anilist')
+          navigate('/home')
         } else {
           alert(data.message)
         }
@@ -55,6 +55,8 @@ function Login () {
             >
               Log in
             </button>
+            <div>Don't have an account? <a link='true' href='/'>Login here </a> 
+            </div>
           </form>
         </div>
         <div className='col-2'>

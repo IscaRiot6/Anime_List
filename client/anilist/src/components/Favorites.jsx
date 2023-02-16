@@ -8,7 +8,7 @@ import axios from 'axios'
 //   { id: 3, title: 'Anime 3', imageUrl: '' }
 // ]
 
-function Anilist () {
+function Favorites () {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [genre, setGenre] = useState('')
@@ -106,6 +106,6 @@ function Anilist () {
   )
 }
 
-export default Anilist
+export default Favorites
 
 // '63e94af3df49704aa42e6fda'

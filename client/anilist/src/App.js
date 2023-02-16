@@ -8,7 +8,8 @@ import {
 } from 'react-router-dom'
 import Signup from './components/SignUp'
 import Login from './components/Login'
-import Anilist from './components/Anilist'
+import Home from './components/Home'
+import Favorites from './components/Favorites'
 import './App.css'
 // import axios from 'axios'
 // import { useState, useEffect } from 'react'
@@ -22,7 +23,8 @@ function App () {
             <Route path='/' element={<Signup />} />
 
             <Route path='/login' element={<Login />} />
-            <Route path='/anilist' element={<Anilist />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/favorites' element={<Favorites />} />
           </Routes>
         </div>
       </Router>

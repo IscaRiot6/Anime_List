@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import BgImg from '../assets/img1.jpg'
 
+
 function Signup () {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
@@ -78,6 +79,8 @@ function Signup () {
             >
               Create Account
             </button>
+            <div>Already have an account? <a link='true' href='/login'>Login here </a> 
+            </div>
           </form>
         </div>
         <div className='col-2'>
