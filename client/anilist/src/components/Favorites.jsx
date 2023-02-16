@@ -12,54 +12,59 @@ function Favorites () {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [genre, setGenre] = useState('')
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState({})
   const [imageUrl, setImageUrl] = useState('')
   const [list, setList] = useState([])
-  console.log(user, list)
-  function getList () {
-    if (localStorage.getItem('token')) {
+  function getList (id) {
+    axios
+    .get('http://localhost:8000/anime/' + id)
+    .then((m) => {
+      setList(m.data)
+    })
+
+  }
+
+  useEffect(() => {
+        if (localStorage.getItem('token')) {
       axios
         .post('http://localhost:8000/user/verify', {
           token: localStorage.getItem('token')
         })
         .then(({ data }) => {
-          setUser(data)
-          if (user._id) {
-            axios
-              .get('http://localhost:8000/anime/' + user._id + '/')
-              .then(({ data }) => {
-                setList(data.list)
-              })
-          }
+          var m = data 
+
+          setUser(m)
+
+         if(user._id){
+          getList(user._id)
+         }
         })
         .catch(error => {
           console.log(error)
         })
     }
-  }
-
-  useEffect(() => {
-    getList()
-  }, [])
+   
+  }, [user])
 
   function addAnime () {
+    var newAnime = {
+      title,
+      description,
+      genre,
+      imageUrl,
+      user: user._id
+    }
+    console.log("jkhajkajkajk",user._id)
     axios
-      .post('http://localhost:8000/anime/', {
-        title,
-        description,
-        genre,
-        imageUrl,
-        user: user._id
-      })
+      .post('http://localhost:8000/anime/', newAnime )
       .then(({ data }) => {
-        console.log(data)
-        setList(prevState => [...prevState, data])
+        getList(user._id)
       })
   }
 
   return (
     <section id='anime-items'>
-      <div>
+      <div className="form">
         <h1>Nothing to see here yet</h1>
         <input
           placeholder='title'

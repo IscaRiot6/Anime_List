@@ -9,12 +9,13 @@ const addAnime = async (req, res) => {
     user: req.body.user
   })
   await newAnime.save()
-  return res.json(newAnime)
+  let animes = await Anilist.find({ user: req.body.user })
+  res.send({ msg: animes })
 }
 
 const getAnime = async (req, res) => {
   let animes = await Anilist.find({ user: req.params._id })
-  return res.json({ list: animes })
+  res.send(animes)
 }
 
 const deleteAnime = async (req, res) => {
