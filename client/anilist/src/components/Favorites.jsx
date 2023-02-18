@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react'
 // import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
-// const initialList = [
-//   { id: 1, title: 'Anime 1', imageUrl: '' },
-//   { id: 2, title: 'Anime 2', imageUrl: '' },
-//   { id: 3, title: 'Anime 3', imageUrl: '' }
-// ]
+// import Pagination from 'pagination-react-hooks';
 
 function Favorites () {
   const [title, setTitle] = useState('')
@@ -15,11 +10,16 @@ function Favorites () {
   const [user, setUser] = useState({})
   const [imageUrl, setImageUrl] = useState('')
   const [list, setList] = useState([])
+
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [itemsPerPage, setItemsPerPage] = useState(12);
+
   function getList (id) {
     axios
     .get('http://localhost:8000/anime/' + id)
     .then((m) => {
       setList(m.data)
+      
     })
 
   }
@@ -62,10 +62,19 @@ function Favorites () {
       })
   }
 
+  // Pagination
+  // const indexOfLastItem = currentPage * itemsPerPage;
+  // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // const currentItems = list.slice(firstItemIndex, lastItemIndex);
+
+  // const paginate = pageNumber => setCurrentPage(pageNumber);
+
   return (
     <section id='anime-items'>
       <div className="form">
-        <h1>Nothing to see here yet</h1>
+        <h1>Your Ani-List</h1>
+        <p>Save here your favorite anime</p>
+        <form className='form-2'>
         <input
           placeholder='title'
           onChange={e => {
@@ -90,27 +99,30 @@ function Favorites () {
             setImageUrl(e.target.value)
           }}
         />
-        {/* <input
-        onChange={e => {
-          setUser(e.target.value)
-        }}
-      /> */}
         <button onClick={addAnime}>Add Anime</button>
+        <div className='anime-grid'>
         {list.map((item, index) => {
           return (
             <div key={item._id || index}>
               <img src={item.imageUrl} alt='' />
               <h1>{item.title}</h1>
               <p>{item.description}</p>
-              <p>{item.genre}</p>
-            </div>
+              <p>{item.genre}</p>  
+            </div>  
           )
         })}
-      </div>
-    </section>
+        </div>
+        {/* <Pagination 
+          itemsPerPage={itemsPerPage} 
+          totalItems={list.length} 
+          currentPage={currentPage} 
+          setCurrentPage={setCurrentPage} 
+        /> */}
+        </form>
+      </div> 
+    </section>   
   )
 }
 
 export default Favorites
 
-// '63e94af3df49704aa42e6fda'
