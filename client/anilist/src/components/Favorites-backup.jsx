@@ -11,8 +11,8 @@ function Favorites () {
   const [imageUrl, setImageUrl] = useState('')
   const [list, setList] = useState([])
 
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [itemsPerPage, setItemsPerPage] = useState(12);
+//   const [currentPage, setCurrentPage] = useState(1);
+//   const [itemsPerPage, setItemsPerPage] = useState(12);
 
   function getList (id) {
     axios

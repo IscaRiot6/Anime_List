@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 // import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-// import Pagination from 'pagination-react-hooks';
+import FavoritesListPagination from './FavoritesListPagination'
+import Button from 'react-bootstrap/Button'
 
 function Favorites () {
   const [title, setTitle] = useState('')
@@ -11,8 +12,10 @@ function Favorites () {
   const [imageUrl, setImageUrl] = useState('')
   const [list, setList] = useState([])
 
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [itemsPerPage, setItemsPerPage] = useState(12);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(12);
+
+  const [searchValue, setSearchValue] = useState('')
 
   function getList (id) {
     axios
@@ -32,7 +35,6 @@ function Favorites () {
         })
         .then(({ data }) => {
           var m = data 
-
           setUser(m)
 
          if(user._id){
@@ -54,7 +56,7 @@ function Favorites () {
       imageUrl,
       user: user._id
     }
-    console.log("jkhajkajkajk",user._id)
+    // console.log("jkhajkajkajk",user._id)
     axios
       .post('http://localhost:8000/anime/', newAnime )
       .then(({ data }) => {
@@ -62,66 +64,133 @@ function Favorites () {
       })
   }
 
-  // Pagination
-  // const indexOfLastItem = currentPage * itemsPerPage;
-  // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  // const currentItems = list.slice(firstItemIndex, lastItemIndex);
+  function deleteAnime(id) {
+    axios
+      .delete(`http://localhost:8000/anime/${id}`)
+      .then((res) => {
+        getList(user._id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-  // const paginate = pageNumber => setCurrentPage(pageNumber);
+  function updateAnime(id, title, description, genre, imageUrl) {
+    const updatedAnime = {
+      title,
+      description,
+      genre,
+      imageUrl,
+    };
+    axios
+      .put(`http://localhost:8000/anime/${id}`, updatedAnime)
+      .then((res) => {
+        getList(user._id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  const totalPages = Math.ceil(list.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const filteredItems = searchValue.length === 0
+    ? list
+    : list.filter(item => item.title.toLowerCase(). includes(searchValue.toLowerCase()))
+  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
+
+  function paginate(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
+
+
 
   return (
-    <section id='anime-items'>
-      <div className="form">
-        <h1>Your Ani-List</h1>
-        <p>Save here your favorite anime</p>
-        <form className='form-2'>
-        <input
-          placeholder='title'
-          onChange={e => {
-            setTitle(e.target.value)
-          }}
+    <section className='anime-items'>
+  <div className="form">
+    <h1>Your Ani-List</h1>
+    <p>Save here your favorite anime</p>
+    <form className='form-2'>
+      <input
+        placeholder='title'
+        onChange={e => {
+          setTitle(e.target.value)
+        }}
+      />
+      <input
+        placeholder='description'
+        onChange={e => {
+          setDescription(e.target.value)
+        }}
+      />
+      <input
+        placeholder='genre'
+        onChange={e => {
+          setGenre(e.target.value)
+        }}
+      />
+      <input
+        placeholder='imageUrl'
+        onChange={e => {
+          setImageUrl(e.target.value)
+        }}
+      />
+      <button onClick={addAnime}>Add Anime</button>
+      <div className='search-container'>
+      <input
+        id='search-anime'
+        placeholder='Search anime'
+        value={searchValue}
+        onChange={e => {
+          setSearchValue(e.target.value)
+        }}
         />
-        <input
-          placeholder='description'
-          onChange={e => {
-            setDescription(e.target.value)
-          }}
-        />
-        <input
-          placeholder='genre'
-          onChange={e => {
-            setGenre(e.target.value)
-          }}
-        />
-        <input
-          placeholder='imageUrl'
-          onChange={e => {
-            setImageUrl(e.target.value)
-          }}
-        />
-        <button onClick={addAnime}>Add Anime</button>
-        <div className='anime-grid'>
-        {list.map((item, index) => {
-          return (
-            <div key={item._id || index}>
-              <img src={item.imageUrl} alt='' />
-              <h1>{item.title}</h1>
-              <p>{item.description}</p>
-              <p>{item.genre}</p>  
-            </div>  
-          )
-        })}
-        </div>
-        {/* <Pagination 
-          itemsPerPage={itemsPerPage} 
-          totalItems={list.length} 
-          currentPage={currentPage} 
-          setCurrentPage={setCurrentPage} 
-        /> */}
-        </form>
-      </div> 
-    </section>   
+      </div>
+
+      <div className='anime-table'>
+        <table>
+          <tbody>
+            {currentItems.map((item, index) => {
+              return (
+                <tr key={item._id || index}>
+                  <td><img src={item.imageUrl} alt='' /></td>
+                  <Button               
+                  id='delete-button'
+                  className='bi-trash">'
+                  onClick={() => deleteAnime(item._id)}> Remove
+                  </Button>
+                  <td>
+                    <h1>{item.title}</h1>
+                    <p>{item.description}</p>
+                    <p>{item.genre}</p>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+      
+    </form>
+    <div className='pagination-container'>
+      <ul>
+        <li>
+          <FavoritesListPagination
+            className="pagination-container"
+            itemsPerPage={itemsPerPage}
+            list={list}
+            paginate={paginate}
+            currentPage={currentPage}
+          />
+        </li>
+      </ul>
+    </div>
+  </div> 
+</section>
+   
   )
+  
 }
 
 export default Favorites

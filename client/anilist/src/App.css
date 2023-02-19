@@ -18,9 +18,9 @@ import
   height: 100vh;
 }
 
-.App {
-  /* margin: 0 auto; */
-  height: 100vh;
+.App { 
+   /* margin: 0 auto;  */
+   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,9 +135,9 @@ import
 
 /* anilist css */
 
-#anime-items {
+/* #anime-items {
   display: flex;
-}
+} */
 
 /* HOMEPAGE */
 
@@ -220,17 +220,158 @@ import
 
 /* ANIME-GRID */
 
-.anime-grid {
+/* .anime-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 20px;
-}
+} */
 
-.anime-item {
-  display: flex;
-  flex-direction: column;
+.anime-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
   align-items: center;
   text-align: center;
 }
+
+/* PAGINATION */
+
+/* .pagination-container {
+  display: flex;
+  justify-content: flex-end;
+} */
+
+/* .pagination-container ul {
+  display: flex !important;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-container ul li {
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination-container ul li.active {
+  font-weight: bold;
+} */
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.pagination-container ul {
+  list-style: none;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-container li {
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.pagination-container li.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination-container li:hover {
+  background-color: #ccc;
+}
+
+/* TABLE */
+
+/* .anime-table {
+  padding: 20px;
+  background-color: #F2F2F2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid #ccc;
+}
+
+td {
+  padding: 10px;
+}
+
+img {
+  width: 100px;
+  height: 150px;
+} */
+
+.anime-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  /* border: 1px solid #ccc; */
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.anime-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.anime-table th,
+.anime-table td {
+  border: 1px solid #641f1f;
+  padding: 8px;
+  text-align: left;
+}
+
+.anime-table th {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+
+/* SEARCH CONTAINER */
+
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#search-anime {
+  /* background-color: #f2f2f2; */
+  padding: 8px;
+  border-radius: 6px;
+  margin-right: 12px;
+  border: 1px solid #ccc;
+}
+
+.search-container input:hover {
+  background-color: #e8e8e8;
+}
+
+/* DELETE BUTTON */
+
+ #delete-button {
+   background-image: url('https://img.icons8.com/material-outlined/24/000000/delete-forever--v1.png" alt="delete');
+  position: absolute; 
+  /* background-color: transparent; */
+  /* border: none; */
+  padding: 5px; 
+  background-color: red;
+} 
 
