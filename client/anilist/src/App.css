@@ -375,3 +375,17 @@ img {
   background-color: red;
 } 
 
+#delete-button:hover {
+  background-color: #e8e8e8;
+  
+}
+
+#update-button:hover{
+  background-color: #e8e8e8;
+}
+
+#update-button{
+  
+  margin-right: 55px;
+}
+

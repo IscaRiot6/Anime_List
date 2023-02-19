@@ -17,6 +17,9 @@ function Favorites () {
 
   const [searchValue, setSearchValue] = useState('')
 
+  const [selectedItem, setSelectedItem] = useState(null)
+  const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false)
+
   function getList (id) {
     axios
     .get('http://localhost:8000/anime/' + id)
@@ -56,7 +59,7 @@ function Favorites () {
       imageUrl,
       user: user._id
     }
-    // console.log("jkhajkajkajk",user._id)
+    
     axios
       .post('http://localhost:8000/anime/', newAnime )
       .then(({ data }) => {
@@ -75,7 +78,7 @@ function Favorites () {
       });
   }
 
-  function updateAnime(id, title, description, genre, imageUrl) {
+  function updateHandler(id, title, description, genre, imageUrl) {
     const updatedAnime = {
       title,
       description,
@@ -86,6 +89,8 @@ function Favorites () {
       .put(`http://localhost:8000/anime/${id}`, updatedAnime)
       .then((res) => {
         getList(user._id);
+        setIsUpdateFormVisible(false); // Set isUpdateFormVisible to false
+        setSelectedItem(null);
       })
       .catch((err) => {
         console.log(err);
@@ -103,6 +108,15 @@ function Favorites () {
   function paginate(pageNumber) {
     setCurrentPage(pageNumber);
   }
+
+  // function handleUpdateClick(event) {
+  //   const animeId = event.target.getAttribute('data-id');
+  //   window.location.href = `update-anime.html?id=${animeId}`
+  // }
+
+  // const handleRedirect = (animeId) => {
+  //   window.location.href = `update-anime.html?id=${animeId}`
+  // }
 
 
 
@@ -160,6 +174,17 @@ function Favorites () {
                   className='bi-trash">'
                   onClick={() => deleteAnime(item._id)}> Remove
                   </Button>
+                  <div>
+                  <Button
+                  id='update-button'
+                    className='bi-pencil-square'
+                    onClick={() => {
+                      setSelectedItem(item) // set the selected anime's id
+                      setIsUpdateFormVisible(true)
+                    }}>
+                      Edit
+                    </Button>
+                    </div>
                   <td>
                     <h1>{item.title}</h1>
                     <p>{item.description}</p>
@@ -171,6 +196,57 @@ function Favorites () {
           </tbody>
         </table>
       </div>
+      {isUpdateFormVisible && selectedItem && (
+        <div className='update-form'>
+          <h2>Update Anime</h2>
+          <input
+          defaultValue={selectedItem.title}
+          onChange={e => {
+            setSelectedItem({...selectedItem, title: e.target.value})
+          }}
+          />
+          <input
+          defaultValue={selectedItem.description}
+          onChange={e => {
+            setSelectedItem({...selectedItem, description: e.target.value})
+          }}
+          />
+          <input
+          defaultValue={selectedItem.genre}
+          onChange={e => {
+            setSelectedItem({...selectedItem, genre: e.target.value})
+          }}
+          />
+          <input
+          defaultValue={selectedItem.imageUrl}
+          onChange={e => {
+            setSelectedItem({...selectedItem, imageUrl: e.target.value})
+          }}
+          />
+          <Button
+            onClick={() => {
+              updateHandler(
+                selectedItem._id,
+                selectedItem.title,
+                selectedItem.description,
+                selectedItem.genre,
+                selectedItem.imageUrl
+              )
+              setIsUpdateFormVisible(false)
+              setSelectedItem(null)
+              // handleRedirect(selectedItem._id)
+            }}>
+              Update
+            </Button>
+            <Button
+              onClick={() => {
+                setIsUpdateFormVisible(false)
+                setSelectedItem(null)
+              }}>
+                Cancel
+              </Button>
+        </div>
+      )}
       
     </form>
     <div className='pagination-container'>
