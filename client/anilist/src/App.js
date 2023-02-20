@@ -11,6 +11,8 @@ import Login from './components/Login'
 import Home from './components/Home'
 import Favorites from './components/Favorites'
 import './App.css'
+// import { ToastContainer } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
 // import axios from 'axios'
 // import { useState, useEffect } from 'react'
 
@@ -24,6 +26,7 @@ function App () {
 
             <Route path='/login' element={<Login />} />
             <Route path='/home' element={<Home />} />
+
             <Route path='/favorites' element={<Favorites />} />
           </Routes>
         </div>

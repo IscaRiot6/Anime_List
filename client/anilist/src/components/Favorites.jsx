@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import FavoritesListPagination from './FavoritesListPagination'
 import Button from 'react-bootstrap/Button'
+// import { useRef } from 'react';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import FavoritesNavBar from './FavoritesNavBar'
 
 function Favorites () {
   const [title, setTitle] = useState('')
@@ -19,6 +23,8 @@ function Favorites () {
 
   const [selectedItem, setSelectedItem] = useState(null)
   const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false)
+
+  const [successMessage, setSuccessMessage] = useState(null);
 
   function getList (id) {
     axios
@@ -64,8 +70,25 @@ function Favorites () {
       .post('http://localhost:8000/anime/', newAnime )
       .then(({ data }) => {
         getList(user._id)
+        setSuccessMessage(`Anime "${title}" has been added successfully in your list.`);
+        // toast.success('Your anime has been added successfully!'); 
+        console.log("Success message set!");
+      })
+      .catch(error => {
+        console.log(error)
+        setSuccessMessage('')
       })
   }
+
+  useEffect(() => {
+    if (successMessage) {
+      setTimeout(() => {
+        setSuccessMessage('');
+      }, 3000);
+    }
+  }, [successMessage]);
+
+
 
   function deleteAnime(id) {
     axios
@@ -91,6 +114,8 @@ function Favorites () {
         getList(user._id);
         setIsUpdateFormVisible(false); // Set isUpdateFormVisible to false
         setSelectedItem(null);
+
+        // updateFormRef.current.scrollIntoView({ behavior: 'smooth' });
       })
       .catch((err) => {
         console.log(err);
@@ -117,74 +142,119 @@ function Favorites () {
   // const handleRedirect = (animeId) => {
   //   window.location.href = `update-anime.html?id=${animeId}`
   // }
+  // const updateButtons = document.querySelectorAll('.update-button');
 
+  // updateButtons.forEach((button) => {
+  //   button.addEventListener('click', () => {
+  //     const animeId = button.id.split('-')[1]
+  //     window.location.href = `update-anime.html?id=${animeId}`;
+  //     window.scrollTo(0, document.body.scrollHeight)
+  //   })
+  // })
+  // const updateFormRef = useRef(null);
+
+  // useEffect(() => {
+  //   if (isUpdateFormVisible && updateFormRef.current) {
+  //     updateFormRef.current.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // }, [isUpdateFormVisible]);
+
+  
 
 
   return (
-    <section className='anime-items'>
-  <div className="form">
-    <h1>Your Ani-List</h1>
-    <p>Save here your favorite anime</p>
-    <form className='form-2'>
-      <input
+    <section>
+      
+    
+
+  <section className='anime-items'>
+    {successMessage && (
+      <div className='success-message'>{successMessage}</div>
+    )}
+    <div className="form">
+    
+      <h1>Your Ani-List</h1>
+      <nav>
+        <FavoritesNavBar>
+          
+        </FavoritesNavBar>
+      </nav>
+      <p>Save here your favorite anime</p>
+      
+      <form className='form-2'>
+        <input
         placeholder='title'
         onChange={e => {
           setTitle(e.target.value)
         }}
-      />
-      <input
+        />
+        <input
         placeholder='description'
         onChange={e => {
           setDescription(e.target.value)
         }}
-      />
-      <input
+        />
+        <input
         placeholder='genre'
         onChange={e => {
           setGenre(e.target.value)
         }}
-      />
-      <input
+        />
+        <input
         placeholder='imageUrl'
         onChange={e => {
           setImageUrl(e.target.value)
         }}
-      />
-      <button onClick={addAnime}>Add Anime</button>
-      <div className='search-container'>
-      <input
-        id='search-anime'
-        placeholder='Search anime'
-        value={searchValue}
-        onChange={e => {
-          setSearchValue(e.target.value)
-        }}
         />
-      </div>
-
-      <div className='anime-table'>
-        <table>
+        <button onClick={addAnime}>Add Anime</button>
+        
+        
+          <div className='search-container'>
+            <input
+            id='search-anime'
+            placeholder='Search anime'
+            value={searchValue}
+            onChange={e => {
+            setSearchValue(e.target.value)
+            }}
+            />
+            
+    </div>
+    
+      <main className='anime-table'>
+        <table className='basic-table'>
           <tbody>
             {currentItems.map((item, index) => {
               return (
                 <tr key={item._id || index}>
                   <td><img src={item.imageUrl} alt='' /></td>
-                  <Button               
-                  id='delete-button'
-                  className='bi-trash">'
-                  onClick={() => deleteAnime(item._id)}> Remove
-                  </Button>
-                  <div>
-                  <Button
-                  id='update-button'
+                  <td>
+                  
+                  <div id='delete-button-div'>
+                    
+                    <Button               
+                    id='delete-button'
+                    className='bi-trash">'
+                    onClick={() => deleteAnime(item._id)}> Remove
+                    </Button>
+                    
+                  </div>
+                  
+                  
+                  <div id='update-button-div'>
+                    <Button
+                    id='update-button'
                     className='bi-pencil-square'
                     onClick={() => {
                       setSelectedItem(item) // set the selected anime's id
+                      // updateFormRef.current.scrollIntoView({ behavior: 'smooth' });
                       setIsUpdateFormVisible(true)
-                    }}>
-                      Edit
+                      }}>
+                      Up-date
                     </Button>
-                    </div>
+                  </div>
+                  
+                  </td>
                   <td>
                     <h1>{item.title}</h1>
                     <p>{item.description}</p>
@@ -195,7 +265,7 @@ function Favorites () {
             })}
           </tbody>
         </table>
-      </div>
+      </main>
       {isUpdateFormVisible && selectedItem && (
         <div className='update-form'>
           <h2>Update Anime</h2>
@@ -242,6 +312,7 @@ function Favorites () {
               onClick={() => {
                 setIsUpdateFormVisible(false)
                 setSelectedItem(null)
+                // updateFormRef.current.scrollIntoView({ behavior: 'smooth' });
               }}>
                 Cancel
               </Button>
@@ -249,6 +320,7 @@ function Favorites () {
       )}
       
     </form>
+    
     <div className='pagination-container'>
       <ul>
         <li>
@@ -263,7 +335,14 @@ function Favorites () {
       </ul>
     </div>
   </div> 
+  
+ 
 </section>
+
+</section>
+
+
+
    
   )
   
