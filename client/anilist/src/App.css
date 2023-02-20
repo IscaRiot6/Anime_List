@@ -428,15 +428,14 @@ img {
 
 /* FAVORITES NAVBAR */
 
-.navbar {
+/* .navbar {
   position: relative;
   font-size: larger;
   
   text-shadow: #fefdff;
-  /* justify-content: end; */
+  
   background-color: #007bff !important;
-  /* display: flex; */
-  /* justify-content: center; */
+  
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #317465;
   border-radius: 15px;
@@ -444,20 +443,39 @@ img {
   
 }
 
-/* Add hover effect to Navbar links */
+
 .nav-link:hover {
-  /* color: #fff; */
+ 
   color: #ff6b6b;
   background-color: #007bff;
 }
 
-/* .mr-auto{
-  justify-content: space-between;
+
+
+.logout-link{
+  margin-left: auto;
 } */
+
+.navbar {
+  position: relative;
+  font-size: larger;
+  text-shadow: #fefdff;
+  background-color: #007bff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #317465;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.nav-link:hover {
+  color: #ff6b6b;
+  background-color: #007bff;
+}
 
 .logout-link{
   margin-left: auto;
 }
+
 
 
 

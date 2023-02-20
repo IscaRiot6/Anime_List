@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button'
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import FavoritesNavBar from './FavoritesNavBar'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Favorites () {
   const [title, setTitle] = useState('')

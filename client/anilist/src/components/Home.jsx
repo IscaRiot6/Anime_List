@@ -39,29 +39,29 @@ function Home() {
   
     return (
     <section>
-        <header style={{ backgroundImage: `url(${HeaderImg})` }}>
-       <div className='navbar-container'>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/anilist'>Favourites</Link>
-            </li>
-            <li>
+      <header style={{ backgroundImage: `url(${HeaderImg})` }}>
+        <div className='navbar-container'>
+          <nav>
+            <ul>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/anilist'>Favourites</Link>
+              </li>
+              <li>
                 <a onClick={() => navigate('/favorites')}>Favorites</a>
               </li>
-            <li>
-              <Link to='/trending'>Trending</Link>
-            </li>
-            <li>
-              <button onClick={handleLogout}>Logout</button>
-            </li>
-          </ul>
-        </nav>
-        <main>{createAnimeList()}</main>
-      </div>
+              <li>
+                <Link to='/trending'>Trending</Link>
+              </li>
+              <li>
+                <button onClick={handleLogout}>Logout</button>
+              </li>
+            </ul>
+          </nav>
+          <main>{createAnimeList()}</main>
+        </div>
       </header>
     </section>
     );
