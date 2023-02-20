@@ -93,6 +93,8 @@ function Favorites () {
 
 
   function deleteAnime(id) {
+    const confirmed = window.confirm('Are you sure you want to delete this anime?');
+  if (confirmed) {
     axios
       .delete(`http://localhost:8000/anime/${id}`)
       .then((res) => {
@@ -102,6 +104,7 @@ function Favorites () {
         console.log(err);
       });
   }
+}
 
   function updateHandler(id, title, description, genre, imageUrl) {
     const updatedAnime = {
