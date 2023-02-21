@@ -28,6 +28,9 @@ function Favorites () {
 
   const [successMessage, setSuccessMessage] = useState(null);
 
+  const [isDeleting, setIsDeleting] = useState(false);
+
+
   function getList (id) {
     axios
     .get('http://localhost:8000/anime/' + id)
@@ -242,7 +245,18 @@ function Favorites () {
                     className='bi-trash">'
                     onClick={() => deleteAnime(item._id)}> Remove
                     </Button>
-                    
+                    {isDeleting && (
+
+                      <div className="delete-confirmation">
+                      <p>Are you sure you want to delete this anime?</p>
+                      <Button className="confirm-button" onClick={() => {deleteAnime(item._id); setIsDeleting(false);}}>
+                      Yes
+                      </Button>
+                      <Button className="cancel-button" onClick={() => setIsDeleting(false)}>
+                      No
+                      </Button>
+                      </div>
+                    )}
                   </div>
                   
                   

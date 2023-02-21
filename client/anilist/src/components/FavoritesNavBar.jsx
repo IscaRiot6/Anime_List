@@ -19,6 +19,7 @@ function FavoritesNavBar() {
 
   return (
     <Navbar className='navbar' bg="light" variant="light" expand="lg">
+        <div className='navContainer'>
       <Navbar.Brand href="home">AniList</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -27,9 +28,10 @@ function FavoritesNavBar() {
           <Nav.Link onClick={handleDropdownClick}>Genres</Nav.Link>
           <Nav.Link href="favorites">Favorites</Nav.Link>
           <Nav.Link href="#trending">Trending</Nav.Link>
+          <Nav.Link className='logout-link' onClick={handleLogoutConfirmation}>Logout</Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link className='logout-link' onClick={handleLogoutConfirmation}>Logout</Nav.Link>
+          
         </Nav>
       </Navbar.Collapse>
 
@@ -38,11 +40,13 @@ function FavoritesNavBar() {
           Genres
         </Dropdown.Toggle>
         <Dropdown.Menu id="genres-dropdown">
-          <Dropdown.Item href="#genre1">Genre 1</Dropdown.Item>
-          <Dropdown.Item href="#genre2">Genre 2</Dropdown.Item>
-          <Dropdown.Item href="#genre3">Genre 3</Dropdown.Item>
+          <Dropdown.Item href="#genre1">Action / Adventure</Dropdown.Item>
+          
+          <Dropdown.Item href="#genre2">Drama / Psychological</Dropdown.Item>
+          <Dropdown.Item href="#genre3">Horror / Other</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
+      </div>
     </Navbar>
   );
 }

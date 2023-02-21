@@ -166,6 +166,7 @@ body{
 }
 
 .navbar-container {
+  position: absolute;
   margin-top: 20px; /* add margin to the top */
 }
 
@@ -253,28 +254,7 @@ body{
 
 /* PAGINATION */
 
-/* .pagination-container {
-  display: flex;
-  justify-content: flex-end;
-} */
 
-/* .pagination-container ul {
-  display: flex !important;
-  justify-content: flex-end;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.pagination-container ul li {
-  margin: 0 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.pagination-container ul li.active {
-  font-weight: bold;
-} */
 
 .pagination-container {
   display: flex;
@@ -457,6 +437,7 @@ img {
 } */
 
 .navbar {
+  background-image: url('https://www.cbr.com/wp-content/uploads/2021/01/Attack-on-Titan-wall-titans-rumbling-feature.jpg');
   position: relative;
   font-size: larger;
   text-shadow: #fefdff;
@@ -472,10 +453,75 @@ img {
   background-color: #007bff;
 }
 
-.logout-link{
+/* .logout-link{
+  margin-right: 20px;
   margin-left: auto;
+  border-radius: 15px;
+  background: linear-gradient(to right, #6d9479, #685ecc, #a53131);
+  
+  background-color: #317465;
+  
+} */
+
+.navContainer{
+  padding-left: 20px;
+  margin-top: 40px;
+  background-color: #f3655b;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdi8P8V6Km4kQXlAsNx52yLc0P_ceS4PDLPQ&usqp=CAU'); */
 }
 
+/* .mr-auto{
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+} */
 
 
+.mr-auto{
+  background: linear-gradient(to right, #6d9479, #685ecc, #a53131);
+  /* background-color: #317465; */
+  border-radius: 15px;
+}
+
+/* HOME */
+
+.anime-card {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px; */
+  /* margin: 10px; */
+  /* width: 200px; */
+}
+
+.anime-card img {
+  width: 100%;
+}
+
+.anime-card h3 {
+  /* display: none; */
+  margin: 5px;
+  text-align: center;
+}
+
+.anime-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
 

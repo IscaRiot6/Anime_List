@@ -1,53 +1,85 @@
 import { Link, useNavigate } from 'react-router-dom';
-import React from 'react';
-import HeaderImg from '../assets/Header-1.jpg'
+import React, { useState } from 'react';
+import HeaderImg from '../assets/Header-1.jpg';
 
 function Home() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const createAnimeList = () => {
-      const initialList = [
-        { id: 1, title: 'Anime 1', imageUrl: '' },
-        { id: 2, title: 'Anime 2', imageUrl: '' },
-        { id: 3, title: 'Anime 3', imageUrl: '' },
-        { id: 4, title: 'Anime 4', imageUrl: '' },
-        { id: 5, title: 'Anime 5', imageUrl: '' },
-        { id: 6, title: 'Anime 6', imageUrl: '' },
-        { id: 7, title: 'Anime 7', imageUrl: '' },
-        { id: 8, title: 'Anime 8', imageUrl: '' },
-        { id: 9, title: 'Anime 9', imageUrl: '' },
-        { id: 10, title: 'Anime 10', imageUrl: '' },
-        { id: 11, title: 'Anime 11', imageUrl: '' }
-      ];
-      return initialList.map(item => {
-        return (
-          <div key={item.id}>
-            <img src={item.imageUrl} alt='' />
-            <h1>{item.title}</h1>
-          </div>
-        );
-      });
-    };
-
-    const handleLogout = () => {
-        const confirmed = window.confirm("Are you sure you want to log out?");
-
-        if(confirmed) {
-        navigate('/login')
-    }
-}
+  const initialAnimeList = [    
+    { id: 1, title: 'Death Note', imageUrl: 'https://cdn.myanimelist.net/images/anime/9/9453.jpg' },    
+    { id: 2, title: 'Ghost In The Shell', imageUrl: 'https://cdn.myanimelist.net/images/anime/10/82594.jpg' },    
+    { id: 3, title: 'Gintama', imageUrl: 'https://cdn.myanimelist.net/images/anime/10/73274.jpg' },    
+    { id: 4, title: 'Code Geass: Hangyaku no Lelouch', imageUrl: 'https://cdn.myanimelist.net/images/anime/5/50331.jpg' },    
+    { id: 5, title: 'Spirited Away', imageUrl: 'https://cdn.myanimelist.net/images/anime/6/79597.jpg' },    
+    { id: 6, title: 'Blood C', imageUrl: 'https://cdn.myanimelist.net/images/anime/2/31649.jpg' },    
+    { id: 7, title: 'Blood: The Last Vampire', imageUrl: 'https://cdn.myanimelist.net/images/anime/9/18913.jpg' },    
+    { id: 8, title: 'Vampire Hunter D: Bloodlust', imageUrl: 'https://cdn.myanimelist.net/images/anime/9/21432.jpg' },    
+    { id: 9, title: 'Parasyte: The Maxim', imageUrl: 'https://cdn.myanimelist.net/images/anime/3/73178.jpg' },    
+    { id: 10, title: 'Another', imageUrl: 'https://cdn.myanimelist.net/images/anime/4/75509.webp' },    
+    { id: 11, title: 'Hellsing Ultimate', imageUrl: 'https://cdn.myanimelist.net/images/anime/6/7333.jpg' },
+    { id: 12, title: 'Deadman Wonderland', imageUrl: 'https://cdn.myanimelist.net/images/anime/9/75299.jpg' }
+    ];
   
-    return (
+  const [animeList, setAnimeList] = useState(initialAnimeList);
+  const [searchTerm, setSearchTerm] = useState('');
+  
+  const createAnimeList = () => {
+    if (animeList.length === 0) {
+      return <p>No anime found</p>;
+    }
+    return animeList.map(item => {
+      return (
+        <div key={item.id} className="anime-card">
+          <img src={item.imageUrl} alt='' />
+          {item.title && <h3>{item.title}</h3>}
+        </div>
+      );
+    });
+  };
+
+  const handleLogout = () => {
+    const confirmed = window.confirm("Are you sure you want to log out?");
+
+    if (confirmed) {
+      navigate('/login');
+    }
+  };
+
+  const handleSearchSubmit = e => {
+    e.preventDefault();
+  
+    const filteredList = initialAnimeList.filter(item => {
+      // Combine all searchable fields into a single string
+      const searchFields = [
+        item.title,
+        item.description,
+        item.genre,
+        item.rating
+      ].join(' ').toLowerCase();
+  
+      // Check if the search term is contained in the searchable fields
+      return searchFields.includes(searchTerm.toLowerCase());
+    });
+  
+    setAnimeList(filteredList);
+  };
+  
+  const handleSearchInputChange = e => {
+    setSearchTerm(e.target.value);
+  };
+
+  return (
     <section>
-      <header style={{ backgroundImage: `url(${HeaderImg})` }}>
+      <div><h1>Ani-List</h1></div>
+      <header style={{ backgroundImage: `url(${HeaderImg})` }}></header>
         <div className='navbar-container'>
           <nav>
             <ul>
               <li>
-                <Link to='/'>Home</Link>
+                <Link to='/home'>Home</Link>
               </li>
               <li>
-                <Link to='/anilist'>Favourites</Link>
+                <Link to='/favorites'>Favourites</Link>
               </li>
               <li>
                 <a onClick={() => navigate('/favorites')}>Favorites</a>
@@ -60,12 +92,21 @@ function Home() {
               </li>
             </ul>
           </nav>
-          <main>{createAnimeList()}</main>
-        </div>
-      </header>
-    </section>
-    );
-  }
-
+          <form onSubmit={handleSearchSubmit}>
+            <div className='Home-search-bar'>
+              <input
+                type='text'
+                value={searchTerm}
+                placeholder='Search for anime...'
+                 onChange={handleSearchInputChange} />
+                <button type='submit'>Search</button>
+                </div>
+                </form>
+                <main className='anime-grid'>{createAnimeList()}</main>
+                </div>
+                
+                </section>
+  )
+}
 
 export default Home
