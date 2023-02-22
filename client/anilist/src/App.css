@@ -10,7 +10,7 @@ import
 body{
   /* background: #0f0c29;  */
   /* background: -webkit-linear-gradient(to right, #4545e9, #49a049, #5c3838);   */
-  background: linear-gradient(to right, #6d9479, #685ecc, #a53131);
+  background: linear-gradient(to right, #1b1d1b, #646092, #ceb3a6);
 
 }
 
@@ -515,5 +515,9 @@ body{
 
 .container{
   margin-top: 20px;
+}
+
+.Home-navbar-container{
+
 }
 
