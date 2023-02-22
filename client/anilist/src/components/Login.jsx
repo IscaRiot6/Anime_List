@@ -27,6 +27,7 @@ function Login () {
 
   return (
     <section>
+      <div className='container'>
       <div className='register'>
         <div className='col-1'>
           <h2>Login</h2>
@@ -55,13 +56,14 @@ function Login () {
             >
               Log in
             </button>
-            <div>Don't have an account? <a link='true' href='/'>Login here </a> 
+            <div>Don't have an account? <a link='true' href='/'>Sign-Up here </a> 
             </div>
           </form>
         </div>
         <div className='col-2'>
           <img src={BgImg2} alt='' />
         </div>
+      </div>
       </div>
     </section>
   )

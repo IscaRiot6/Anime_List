@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button'
 import FavoritesNavBar from './FavoritesNavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+// import logoImg from '../assets/logo.jpg'
 
 function Favorites () {
   const [title, setTitle] = useState('')
@@ -180,8 +181,8 @@ function Favorites () {
       <div className='success-message'>{successMessage}</div>
     )}
     <div className="form">
-    
-      <h1>Your Ani-List</h1>
+      {/* <img className='logoImage' src={logoImg} alt='logo'></img> */}
+      {/* <h1>Your Ani-List</h1> */}
       <nav>
         <FavoritesNavBar>
           
@@ -226,8 +227,7 @@ function Favorites () {
             setSearchValue(e.target.value)
             }}
             />
-            
-    </div>
+          </div>
     
       <main className='anime-table'>
         <table className='basic-table'>

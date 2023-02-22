@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Nav, Navbar, Dropdown } from 'react-bootstrap';
+import logoImg from '../assets/logo.jpg'
 
 function FavoritesNavBar() {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,9 @@ function FavoritesNavBar() {
   return (
     <Navbar className='navbar' bg="light" variant="light" expand="lg">
         <div className='navContainer'>
-      <Navbar.Brand href="home">AniList</Navbar.Brand>
+      <Navbar.Brand href="home">
+        <img className='logoImage' src={logoImg} alt='logo'></img>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

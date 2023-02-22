@@ -37,6 +37,7 @@ function Signup () {
 
   return (
     <section>
+      <div className='container'>
       <div className='register'>
         <div className='col-1'>
           <h2 id='test'>Sign Up</h2>
@@ -86,6 +87,7 @@ function Signup () {
         <div className='col-2'>
           <img src={BgImg} alt='Kakashi' />
         </div>
+      </div>
       </div>
     </section>
   )

@@ -46,7 +46,7 @@ body{
 
 .register{
   max-width: 978px;
-  width: 100vw;
+  /* width: 100vw; */
   display:flex;
   border: 1px solid #e9ecef;
   border-radius: 5px;
@@ -234,18 +234,11 @@ body{
 .navbar-container li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* .navbar-container li:nth-child(2) a{
-  cursor:pointer;
-} */
+
 
 /* ANIME-GRID */
 
-/* .anime-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 20px;
-} */
+
 
 .anime-items {
   display: grid;
@@ -293,28 +286,7 @@ body{
 
 /* TABLE */
 
-/* .anime-table {
-  padding: 20px;
-  background-color: #F2F2F2;
-}
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-tr {
-  border-bottom: 1px solid #ccc;
-}
-
-td {
-  padding: 10px;
-}
-
-img {
-  width: 100px;
-  height: 150px;
-} */
 
 .anime-table {
   display: grid;
@@ -469,11 +441,11 @@ img {
 .navContainer{
   padding-left: 20px;
   margin-top: 40px;
-  background-color: #f3655b;
+  /* background-color: #f3655b; */
   color: #fff;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
   position: relative;
   top: 50%;
   left: 50%;
@@ -523,7 +495,7 @@ img {
 
 .anime-grid{
   /* margin-left: 500px; */
-  
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
   /* width: fit-content; */
@@ -534,5 +506,14 @@ img {
 
 .Home-search-bar{
    /* margin-left: 100px; */
+}
+
+.logoImage{
+  /* position: flex; */
+  height: 40px;
+}
+
+.container{
+  margin-top: 20px;
 }
 

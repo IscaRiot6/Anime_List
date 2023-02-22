@@ -1,6 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import HeaderImg from '../assets/Header-1.jpg';
+import FavoritesNavBar from './FavoritesNavBar'
+
+
 
 function Home() {
   const navigate = useNavigate();
@@ -71,16 +74,16 @@ function Home() {
   return (
     <section>
       <div className='container'>
-      <div className=''><h1>Ani-List</h1></div>
+      {/* <div className=''><h1>Ani-List</h1></div> */}
       <header style={{ backgroundImage: `url(${HeaderImg})` }}></header>
         <div className='navbar-container'>
-          <nav className='Home-navbar-container'>
+          {/* <nav className='Home-navbar-container'>
             <ul>
               <li>
                 <Link to='/home'>Home</Link>
               </li>
               <li>
-                <Link to='/favorites'>Favourites</Link>
+                <Link to='/favorites'>Genres</Link>
               </li>
               <li>
                 <a onClick={() => navigate('/favorites')}>Favorites</a>
@@ -92,9 +95,14 @@ function Home() {
                 <button onClick={handleLogout}>Logout</button>
               </li>
             </ul>
-          </nav>
+          </nav> */}
+          <nav>
+        <FavoritesNavBar>
+          
+        </FavoritesNavBar>
+      </nav>
           <form onSubmit={handleSearchSubmit}>
-            <div className='Home-search-bar'>
+            <div className='search-container'>
               <input
                 type='text'
                 value={searchTerm}
@@ -103,6 +111,7 @@ function Home() {
                 <button type='submit'>Search</button>
                 </div>
                 </form>
+                
                 <main className='anime-grid'>{createAnimeList()}</main>
                 </div>
                 </div>
