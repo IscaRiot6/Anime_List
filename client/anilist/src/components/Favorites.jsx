@@ -174,7 +174,7 @@ function Favorites () {
     <section>
       
     
-
+      <div className='container'>
   <section className='anime-items'>
     {successMessage && (
       <div className='success-message'>{successMessage}</div>
@@ -355,9 +355,8 @@ function Favorites () {
     </div>
   </div> 
   
- 
 </section>
-
+</div>
 </section>
 
 

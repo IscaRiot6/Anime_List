@@ -70,10 +70,11 @@ function Home() {
 
   return (
     <section>
-      <div><h1>Ani-List</h1></div>
+      <div className='container'>
+      <div className=''><h1>Ani-List</h1></div>
       <header style={{ backgroundImage: `url(${HeaderImg})` }}></header>
         <div className='navbar-container'>
-          <nav>
+          <nav className='Home-navbar-container'>
             <ul>
               <li>
                 <Link to='/home'>Home</Link>
@@ -104,8 +105,9 @@ function Home() {
                 </form>
                 <main className='anime-grid'>{createAnimeList()}</main>
                 </div>
-                
+                </div>
                 </section>
+                
   )
 }
 

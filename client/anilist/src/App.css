@@ -32,7 +32,7 @@ body{
   grid-gap: 10px;  */
     margin: 0 auto;  
      height: 100vh; 
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   text-align: center; 
@@ -42,11 +42,7 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-/* h2, span{
-  text-decoration-color: #302b63;
-  text-shadow: #003049;
-  text-overflow: ellipsis;
-} */
+
 
 .register{
   max-width: 978px;
@@ -166,8 +162,15 @@ body{
 }
 
 .navbar-container {
+  background-color: #333;
+  /* justify-content: center; */
   position: absolute;
-  margin-top: 20px; /* add margin to the top */
+  margin-top: 20px; 
+}
+
+.Home-navbar-container{
+  justify-content: center;
+  display: flex;
 }
 
 .navbar-container ul {
@@ -231,9 +234,9 @@ body{
 .navbar-container li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.navbar-container li:nth-child(2) a{
+/* .navbar-container li:nth-child(2) a{
   cursor:pointer;
-}
+} */
 
 /* ANIME-GRID */
 
@@ -510,18 +513,26 @@ img {
 }
 
 .anime-card img {
-  width: 100%;
+  width: 70%;
 }
 
 .anime-card h3 {
-  /* display: none; */
   margin: 5px;
   text-align: center;
 }
 
 .anime-grid{
+  /* margin-left: 500px; */
+  
+  align-items: center;
+  justify-content: center;
+  /* width: fit-content; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 30px;
+}
+
+.Home-search-bar{
+   /* margin-left: 100px; */
 }
 
