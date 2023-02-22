@@ -104,11 +104,12 @@ function Home() {
           <form onSubmit={handleSearchSubmit}>
             <div className='search-container'>
               <input
+              className='home-input'
                 type='text'
                 value={searchTerm}
-                placeholder='Search for anime...'
+                placeholder='Search anime...'
                  onChange={handleSearchInputChange} />
-                <button type='submit'>Search</button>
+                {/* <button type='submit'>Search</button> */}
                 </div>
                 </form>
                 
