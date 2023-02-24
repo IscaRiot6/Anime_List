@@ -2,7 +2,6 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min'
-import DataBase from './Data/data'
 
 import {
   BrowserRouter as Router,
@@ -22,9 +21,23 @@ import './App.css'
 import { useState, useEffect } from 'react'
 
 function App () {
-  // console.log(DataBase)
-  const [animeList, setAnimeList] = useState(DataBase)
-  console.log(animeList)
+  const [animeList, setAnimeList] = useState([
+    {
+      id: 1,
+      title: 'Death Note',
+      imageUrl: 'https://cdn.myanimelist.net/images/anime/9/9453.jpg'
+    },
+    {
+      id: 2,
+      title: 'Ghost In The Shell',
+      imageUrl: 'https://cdn.myanimelist.net/images/anime/10/82594.jpg'
+    },
+    {
+      id: 3,
+      title: 'Gintama',
+      imageUrl: 'https://cdn.myanimelist.net/images/anime/10/73274.jpg'
+    }
+  ])
   return (
     <div className='App'>
       <Router>
@@ -45,9 +58,7 @@ function App () {
             />
             <Route
               path='/anime/:id'
-              element={
-                <AnimePage animeList={animeList} initialAnimeList={animeList} />
-              }
+              element={<AnimePage initialAnimeList={animeList} />}
             />
           </Routes>
         </div>
