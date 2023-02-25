@@ -20,7 +20,7 @@ function Favorites () {
   const [list, setList] = useState([])
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(12);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
 
   const [searchValue, setSearchValue] = useState('')
 

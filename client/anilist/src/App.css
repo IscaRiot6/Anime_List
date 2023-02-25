@@ -162,9 +162,10 @@ body{
 }
 
 .navbar-container {
-  background-color: #333;
+  background: linear-gradient(to right, #8f8fc0, #409aa0, #423883);
+  /* background-color: #333; */
   /* justify-content: center; */
-  position: absolute;
+  /* position: absolute; */
   margin-top: 20px; 
 }
 
@@ -531,4 +532,39 @@ body{
   border: 1px solid #ccc;
   margin: 20px;
 }
+
+.animePage-container{
+  
+}
+
+/* HomeButton */
+
+.back-button {
+  display: inline-block;
+  /* background-color: #f44336; */
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 38px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.back-button:hover {
+  background-color: gray;
+}
+
+/* HomePagination */
+
+.pagination-wrapper {
+  
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
 
