@@ -26,7 +26,7 @@ function Home({animeList, setAnimeList}) {
   const navigate = useNavigate();
   useEffect(() => {
     createAnimeList()
-    console.log(animeList)
+    // console.log(animeList)
   }, [animeList])
   
 

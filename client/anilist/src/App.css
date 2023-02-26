@@ -567,4 +567,45 @@ body{
   margin-bottom: 50px;
 }
 
+/* DARKMODE  */
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode-button {
+  border-radius: 5px;
+}
+
+.dark-mode-button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.App.dark-mode {
+  background-color: #1c1c1e;
+  color: #fff;
+}
+
+/* .dark-mode h1 {
+  color: #fff;
+} */
+
+
 
