@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import BgImg from '../assets/img1.jpg'
+import logoImg from '../assets/logo.jpg'
 
 
 function Signup () {
@@ -38,10 +39,12 @@ function Signup () {
   return (
     <section>
       <div className='container'>
+      <img className='logoImage' src={logoImg} alt='logo'></img>
+      <header className='signUp-header'><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr>.</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr></tr><tr>.</tr><tr></tr></header>
       <div className='register'>
         <div className='col-1'>
           <h2 id='test'>Sign Up</h2>
-          <p className='test-2'>Register to enjoy your ani-list</p>
+          <p className='test-2'>Register to enjoy <span><img className='logoImage' src={logoImg} alt='logo'></img></span></p>
           <form id='form' className='flex flex-col'>
             <input
               onChange={e => {
@@ -87,8 +90,11 @@ function Signup () {
         <div className='col-2'>
           <img src={BgImg} alt='Kakashi' />
         </div>
+        
       </div>
+      <footer className='signUp-footer'><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr>.</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr></tr><tr>.</tr><tr></tr></footer>
       </div>
+      
     </section>
   )
 }

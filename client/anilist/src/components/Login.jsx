@@ -2,6 +2,12 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import BgImg2 from '../assets/img4.jpg'
+import FavoritesNavBar from './FavoritesNavBar'
+import logoImg from '../assets/logo.jpg'
+import BgImg from '../assets/img1.jpg'
+import Gon from '../assets/gon.jpg'
+import Ryuk from '../assets/ryuk-2.jpg'
+import RandomImageGenerator from './RandomImageGenerator'
 
 function Login () {
   const [username, setUsername] = useState('')
@@ -28,10 +34,12 @@ function Login () {
   return (
     <section>
       <div className='container'>
+      <img className='logoImage' src={logoImg} alt='logo'></img>
+      <div className='signUp-header'><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr>.</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr></tr><tr>.</tr><tr></tr></div>
       <div className='register'>
         <div className='col-1'>
           <h2>Login</h2>
-          <p className='test-2'>Login here to join Ani-list</p>
+          <p className='test-2'>Login here to join <span><img className='logoImage' src={logoImg} alt='logo'></img></span></p>
           <form id='form-2' className='flex flex-col'>
             <input
               onChange={e => {
@@ -61,9 +69,10 @@ function Login () {
           </form>
         </div>
         <div className='col-2'>
-          <img src={BgImg2} alt='' />
+          <img src={Ryuk} alt='' />
         </div>
       </div>
+      <footer className='signUp-footer'><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr>.</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr></tr><tr>.</tr><tr></tr></footer>
       </div>
     </section>
   )

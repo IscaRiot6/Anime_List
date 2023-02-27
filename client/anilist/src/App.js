@@ -41,19 +41,18 @@ function App () {
   // }, [darkMode])
 
   return (
-    <div>
-      <div className={darkMode ? 'dark-mode' : 'App'}>
-        <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+    <div className={darkMode ? 'dark-mode' : ''}>
+      <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <div className='App'>
         <Router>
           <div>
             <Routes>
               <Route path='/' element={<Signup />} />
 
               <Route path='/login' element={<Login />} />
-              {/* <Route path='/home' element={<Home />} /> */}
 
               <Route path='/favorites' element={<Favorites />} />
-              {/* <Route path='/anime/:id' element={<AnimePage initialAnimeList={animeList} />} /> */}
+
               <Route
                 path='/home'
                 element={

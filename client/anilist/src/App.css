@@ -47,11 +47,12 @@ body{
 .register{
   max-width: 978px;
   /* width: 100vw; */
-  display:flex;
+  display: flex;
   border: 1px solid #e9ecef;
   border-radius: 5px;
   box-shadow: 1px 3px 10px #e9ecef;
   background-color: white;
+  margin-top: 50px;
 }
 
 /* .register h2{
@@ -626,4 +627,30 @@ body.dark-mode {
 }
 
 
+/* signup header */
 
+.signUp-header{
+  background-image: url('https://www.cbr.com/wp-content/uploads/2021/01/Attack-on-Titan-wall-titans-rumbling-feature.jpg');
+  position: relative;
+  font-size: larger;
+  text-shadow: #fefdff;
+  background-color: #007bff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #317465;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.signUp-footer{
+  background-image: url('https://w0.peakpx.com/wallpaper/660/513/HD-wallpaper-attack-on-titan-the-rumbling-attack-on-titan.jpg');
+  position: relative;
+  font-size: larger;
+  text-shadow: #fefdff;
+  background-color: #007bff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #317465;
+  border-radius: 15px;
+  z-index: 1;
+  margin-top: 50px;
+  
+}

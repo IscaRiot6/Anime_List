@@ -253,6 +253,55 @@ const data = [
 
     Years later, having obtained the Number Two headband which grants him the right to challenge the Number One, Afro moves forward in his hunt for revenge on the man who murdered his father. There is just one thing that stands in his way—everyone else in the world! Though the Number One can only be challenged by the Number Two, the Number Two can be challenged by anyone. As his enemies gather to try and take the title of Number Two, Afro must fight through a myriad of foes and obstacles if he hopes to reach the Number One and claim vengeance once and for all.`,
     genre: 'Action / Adventure / Gore'
+  },
+  {
+    id: 27,
+    title: 'Ninja Scroll',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1834/116568.jpg',
+    description: `Jubei Kibagami wanders feudal Japan as an itinerant swordsman-for-hire. After a past betrayal left him masterless, he has no more patience for warring political factions and their schemes. Unfortunately, both past and political intrigue collide when he meets and saves a female ninja named Kagero from a man with the ability to make his body as hard as stone.
+
+    The sole survivor of a ninja clan, Kagero continues her team's last mission: investigate a mysterious plague that wiped out an entire village. Jubei wants nothing to do with this, but the stone-like man's allies, a group of ninja with supernatural powers known as the Devils of Kimon, make that option difficult. To make matters worse, a government spy poisons Jubei, promising him an antidote if he can unravel the true intentions of the Devils of Kimon and their connection to the plague. The trail leads to shadow leaders, a plot to overthrow the government, and a man that Jubei thought he would never see again.`,
+    genre: `Adventure / Fantasy / Horror / Supernatural / Historical`
+  },
+  {
+    id: 28,
+    title: 'Dororo',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1879/100467.jpg',
+    description: `The greedy samurai lord Daigo Kagemitsu's land is dying, and he would do anything for power, even renounce Buddha and make a pact with demons. His prayers are answered by 12 demons who grant him the power he desires by aiding his prefecture's growth, but at a price. When Kagemitsu's first son is born, the boy has no limbs, no nose, no eyes, no ears, nor even skin—yet still, he lives.
+
+    This child is disposed of in a river and forgotten. But as luck would have it, he is saved by a medicine man who provides him with prosthetics and weapons, allowing for him to survive and fend for himself. The boy lives and grows, and although he cannot see, hear, or feel anything, he must defeat the demons that took him as sacrifice. With the death of each one, he regains a part of himself that is rightfully his. For many years he wanders alone, until one day an orphan boy, Dororo, befriends him. The unlikely pair of castaways now fight for their survival and humanity in an unforgiving, demon-infested world.`,
+    genre: `Action / Adventure / Supernatural / Historical / Mythology`
+  },
+  {
+    id: 29,
+    title: 'Shigurui',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1440/115872.jpg',
+    description: `At the beginning of the Edo Era, when people enjoyed a time of peace, Lord Tokugawa Tadanaga holds a fighting tournament. In the past, matches were fought with wooden swords. This time, real swords will be used.
+
+    One-armed Fujiki Gennosuke and blind Irako Seigen will fight each other in this match. Both are disciples of Iwamoto Kogan, who is known as Japan's greatest swordsman. Each of them are determined to prove himself the successor of Iwamoto's school. However, there can only be one champion.
+    
+    So begins a story of intertwining fates, conflict, and strange destinies.`,
+    genre: 'Action / Drama / Gore / Historical / Psychological'
+  },
+  {
+    id: 30,
+    title: 'Dorohedoro',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1740/104786.jpg',
+    description: `Hole—a dark, decrepit, and disorderly district where the strong prey on the weak and death is an ordinary occurrence—is all but befitting of the name given to it. A realm separated from law and ethics, it is a testing ground to the magic users who dominate it. As a race occupying the highest rungs of their society, the magic users think of the denizens of Hole as no more than insects. Murdered, mutilated, and made experiments without a second thought, the powerless Hole dwellers litter the halls of Hole's hospital on a daily basis.
+
+    Possessing free access to and from the cesspool, and with little challenge to their authority, the magic users appear indomitable to most—aside for a few. Kaiman, more reptile than man, is one such individual. He hunts them on a heedless quest for answers with only a trusted pair of bayonets and his immunity to magic. Cursed by his appearance and tormented by nightmares, magic users are his only clue to restoring his life to normal. With his biggest obstacle being his stomach, his female companion Nikaidou, who runs the restaurant Hungry Bug, is his greatest ally.
+    
+    Set in a gritty world of hellish design, Dorohedoro manages a healthy blend of comedy and lightheartedness with death and carnage. Taking plenty of twists and turns while following the lives of Hole's residents, it weaves a unique world of unearthly origin and dreary appearance not for the squeamish or easily disturbed.`,
+    genre: 'Action / Fantasy / Horror / Comedy / Gore'
+  },
+  {
+    id: 31,
+    title: 'Chainsaw Man',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1806/126216.jpg',
+    description: `Denji is robbed of a normal teenage life, left with nothing but his deadbeat father's overwhelming debt. His only companion is his pet, the chainsaw devil Pochita, with whom he slays devils for money that inevitably ends up in the yakuza's pockets. All Denji can do is dream of a good, simple life: one with delicious food and a beautiful girlfriend by his side. But an act of greedy betrayal by the yakuza leads to Denji's brutal, untimely death, crushing all hope of him ever achieving happiness.
+
+    Remarkably, an old contract allows Pochita to merge with the deceased Denji and bestow devil powers on him, changing him into a hybrid able to transform his body parts into chainsaws. Because Denji's new abilities pose a significant risk to society, the Public Safety Bureau's elite devil hunter Makima takes him in, letting him live as long as he obeys her command. Guided by the promise of a content life alongside an attractive woman, Denji devotes everything and fights with all his might to make his naive dreams a reality.`,
+    genre: `Action / Fantasy /Gore`
   }
 ]
 
