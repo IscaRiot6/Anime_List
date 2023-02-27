@@ -13,7 +13,7 @@ import HomePagination from './HomePagination';
 
 function Home({animeList, setAnimeList}) {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 11;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -39,7 +39,7 @@ function Home({animeList, setAnimeList}) {
     if (animeList.length === 0) {
       return <p>No anime found</p>;
     }
-    return animeList.map(item => {
+    return currentAnimeList.map(item => {
       return (
         <Link to={`/anime/${item.id}`}
          key={item.id} className="anime-card">
@@ -114,7 +114,7 @@ function Home({animeList, setAnimeList}) {
                 </div>
                 <div>
                   <HomePagination
-                  currentAnimeList={animeList}
+                  currentAnimeList={currentAnimeList}
                   currentPage={currentPage}
                   itemsPerPage={itemsPerPage}
                   totalItems={animeList.length}

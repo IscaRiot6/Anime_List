@@ -136,7 +136,7 @@ function Favorites () {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const filteredItems = searchValue.length === 0
     ? list
-    : list.filter(item => item.title.toLowerCase(). includes(searchValue.toLowerCase()))
+    : list.filter(item => item.title.toLowerCase().includes(searchValue.toLowerCase()))
   const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
 
   function paginate(pageNumber) {

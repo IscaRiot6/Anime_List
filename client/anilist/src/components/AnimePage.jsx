@@ -8,8 +8,11 @@ import HomeButton from './HomeButton';
 
 function AnimePage({ animeList }) {
   const { id } = useParams();
-//   const anime = initialAnimeList.find(item => item.id === Number(id))
-// const anime = initialAnimeList ? initialAnimeList.find(item => item.id === Number(id)) : null;
+
+  if (!animeList) {
+    return <div>Loading...</div>
+  }
+
 const anime = animeList.find(item => item.id === Number(id));
 
     if (!anime) {
@@ -37,13 +40,19 @@ const anime = animeList.find(item => item.id === Number(id));
         </HomeButton>
       </nav> */}
       <main className='anime-table'>
-      <table className='basic-table'>
-      <h1>{anime.title}</h1>
-      <p>{anime.description} </p>
-      <p>{anime.genre}</p>
-      <img src={anime.imageUrl} alt='' />
-      {/* Add more anime details here */}
-      </table>
+        <div>
+          <div className='basic-table'>
+            <div>
+              <h1>{anime.title}</h1>
+              <p>{anime.description} </p>
+              <p>{anime.genre}</p>
+            </div>
+        <div>
+          <img src={anime.imageUrl} alt='' />
+          {/* Add more anime details here */}
+        </div>
+          </div>
+      </div>
       </main>
       
     </div>

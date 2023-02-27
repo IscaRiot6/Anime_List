@@ -33,10 +33,17 @@ function App () {
     setDarkMode(!darkMode)
   }
 
+  // useEffect(() => {
+  //   const body = document.body
+  //   darkMode
+  //     ? body.classList.add('dark-mode')
+  //     : body.classList.remove('dark-mode')
+  // }, [darkMode])
+
   return (
-    <div className={darkMode ? 'dark-mode' : ''}>
-      <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <div className='App'>
+    <div>
+      <div className={darkMode ? 'dark-mode' : 'App'}>
+        <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Router>
           <div>
             <Routes>
