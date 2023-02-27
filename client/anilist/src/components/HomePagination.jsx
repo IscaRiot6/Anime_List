@@ -36,7 +36,7 @@ function HomePagination({ itemsPerPage, totalItems, paginate, currentPage }) {
 
   return (
     <nav>
-      <Pagination className="justify-content-end">
+      <Pagination className="home-pagination-container">
         <Pagination.First
           disabled={currentPage === 1}
           onClick={() => paginate(1)}

@@ -617,5 +617,13 @@ body.dark-mode {
   color: #fff;
 } */
 
+/* HOME PAGINATION */
+
+.home-pagination-container{
+  justify-content: flex-end;
+  margin-right: 540px;
+  
+}
+
 
 
