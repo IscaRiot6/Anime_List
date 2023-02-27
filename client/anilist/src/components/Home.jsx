@@ -15,33 +15,32 @@ function Home({animeList, setAnimeList}) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    const sortedList = animeList.slice().sort((a, b) => a.title.localeCompare(b.title))
+    setAnimeList(sortedList)
+    // createAnimeList()
+    // console.log(animeList)
+  }, [animeList, setAnimeList])
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentAnimeList = animeList.slice(indexOfFirstItem, indexOfLastItem);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
   
-  // const [list, setList] = useState([])
-
-  const navigate = useNavigate();
-  useEffect(() => {
-    createAnimeList()
-    // console.log(animeList)
-  }, [animeList])
-  
-
-  
-  
-  // const [animeList, setAnimeList] = useState(initialAnimeList);
-  const [searchTerm, setSearchTerm] = useState('');
   
   const createAnimeList = () => {
-    if (animeList.length === 0) {
+    if (currentAnimeList.length === 0) {
       return <p>No anime found</p>;
     }
-const sortedList = currentAnimeList.sort((a, b) => a.title.localeCompare(b.title))
+  
 
-    return sortedList.map(item => {
+    return currentAnimeList.map(item => {
       return (
         <Link to={`/anime/${item.id}`}
          key={item.id} className="anime-card">
@@ -87,7 +86,6 @@ const sortedList = currentAnimeList.sort((a, b) => a.title.localeCompare(b.title
   return (
     <section>
       <div className='container'>
-      {/* <div className=''><h1>Ani-List</h1></div> */}
       <header style={{ backgroundImage: `url(${HeaderImg})` }}></header>
         <div className='navbar-container'>
          
@@ -104,12 +102,12 @@ const sortedList = currentAnimeList.sort((a, b) => a.title.localeCompare(b.title
                 value={searchTerm}
                 placeholder='Search anime...'
                  onChange={handleSearchInputChange} />
-                {/* <button type='submit'>Search</button> */}
+                
                 </div>
                 </form>
                 
                 <main className='anime-grid'>
-                {/* <AnimePage animeList={animeList} /> */}
+                
                   {createAnimeList()}
                   </main>
                 </div>

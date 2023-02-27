@@ -4,14 +4,8 @@ import { useParams } from 'react-router-dom';
 import FavoritesNavBar from './FavoritesNavBar'
 import HomeButton from './HomeButton';
 
-
-
 function AnimePage({ animeList }) {
   const { id } = useParams();
-
-  if (!animeList) {
-    return <div>Loading...</div>
-  }
 
 const anime = animeList.find(item => item.id === Number(id));
 
