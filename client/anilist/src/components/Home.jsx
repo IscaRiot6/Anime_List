@@ -4,41 +4,47 @@ import HeaderImg from '../assets/Header-1.jpg';
 import FavoritesNavBar from './FavoritesNavBar'
 import AnimePage from './AnimePage';
 import HomePagination from './HomePagination';
-// import FavoritesListPagination from './FavoritesListPagination';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
-
-
-
 
 function Home({animeList, setAnimeList}) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentAnimeList = animeList.slice(indexOfFirstItem, indexOfLastItem);
 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  
+  // const [animeList, setAnimeList] = useState(initialAnimeList);
   const [searchTerm, setSearchTerm] = useState('');
 
   const navigate = useNavigate();
 
+  const sortAnimeList = (list) => {
+    const sortedList = [...list].sort((a, b) => {
+      if (a.title && b.title) {
+        return a.title.localeCompare(b.title);
+      } else {
+        return 0;
+      }
+    })
+    return sortedList
+  }
 
   useEffect(() => {
-    const sortedList = animeList.slice().sort((a, b) => a.title.localeCompare(b.title))
-    setAnimeList(sortedList)
+    const sortedList = sortAnimeList(animeList);
+    setAnimeList(sortedList);
     // createAnimeList()
     // console.log(animeList)
-  }, [animeList, setAnimeList])
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentAnimeList = animeList.slice(indexOfFirstItem, indexOfLastItem);
+  }, [animeList])
   
   
   const createAnimeList = () => {
-    if (currentAnimeList.length === 0) {
+    if (animeList.length === 0) {
       return <p>No anime found</p>;
     }
   
+
 
     return currentAnimeList.map(item => {
       return (
@@ -86,6 +92,7 @@ function Home({animeList, setAnimeList}) {
   return (
     <section>
       <div className='container'>
+      {/* <div className=''><h1>Ani-List</h1></div> */}
       <header style={{ backgroundImage: `url(${HeaderImg})` }}></header>
         <div className='navbar-container'>
          
@@ -102,18 +109,19 @@ function Home({animeList, setAnimeList}) {
                 value={searchTerm}
                 placeholder='Search anime...'
                  onChange={handleSearchInputChange} />
-                
+                {/* <button type='submit'>Search</button> */}
                 </div>
                 </form>
                 
                 <main className='anime-grid'>
-                
+                {/* <AnimePage animeList={animeList} /> */}
                   {createAnimeList()}
                   </main>
                 </div>
                 </div>
                 <div>
                   <HomePagination
+                  
                   // className='home-pagination-container'
                   currentAnimeList={currentAnimeList}
                   currentPage={currentPage}
@@ -128,3 +136,6 @@ function Home({animeList, setAnimeList}) {
 }
 
 export default Home
+
+
+

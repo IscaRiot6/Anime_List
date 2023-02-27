@@ -185,12 +185,74 @@ const data = [
   },
   {
     id: 20,
-    title: 'Ergo proxy',
-    imageUrl: 'https://cdn.myanimelist.net/images/anime/1500/103005.jpg',
-    description: `Young Thorfinn grew up listening to the stories of old sailors that had traveled the ocean and reached the place of legend, Vinland. It's said to be warm and fertile, a place where there would be no need for fighting—not at all like the frozen village in Iceland where he was born, and certainly not like his current life as a mercenary. War is his home now. Though his father once told him, "You have no enemies, nobody does. There is nobody who it's okay to hurt," as he grew, Thorfinn knew that nothing was further from the truth.
+    title: 'Boku no Hero Academia',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/10/78745.jpg',
+    description: `The appearance of "quirks," newly discovered super powers, has been steadily increasing over the years, with 80 percent of humanity possessing various abilities from manipulation of elements to shapeshifting. This leaves the remainder of the world completely powerless, and Izuku Midoriya is one such individual.
 
-    The war between England and the Danes grows worse with each passing year. Death has become commonplace, and the viking mercenaries are loving every moment of it. Allying with either side will cause a massive swing in the balance of power, and the vikings are happy to make names for themselves and take any spoils they earn along the way. Among the chaos, Thorfinn must take his revenge and kill Askeladd, the man who murdered his father. The only paradise for the vikings, it seems, is the era of war and death that rages on.`,
-    genre: 'Action / Adventure / Drama / Historical / Gore'
+    Since he was a child, the ambitious middle schooler has wanted nothing more than to be a hero. Izuku's unfair fate leaves him admiring heroes and taking notes on them whenever he can. But it seems that his persistence has borne some fruit: Izuku meets the number one hero and his personal idol, All Might. All Might's quirk is a unique ability that can be inherited, and he has chosen Izuku to be his successor!
+    
+    Enduring many months of grueling training, Izuku enrolls in UA High, a prestigious high school famous for its excellent hero training program, and this year's freshmen look especially promising. With his bizarre but talented classmates and the looming threat of a villainous organization, Izuku will soon learn what it really means to be a hero.
+    `,
+    genre: 'Action'
+  },
+  {
+    id: 21,
+    title: 'Ponyo',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/7/8970.jpg',
+    description: `A goldfish sneaks away from home and floats off on the back of a jellyfish. After getting stuck in a glass jar, she drifts to the shore where she is freed by Sousuke, a five-year-old boy who lives with his mother Lisa in a house by the sea while his father Koichi works on a fishing boat. After healing a cut on Sousuke's finger by licking it, the goldfish is named Ponyo by her new friend.
+
+    Unknown to Sousuke, Ponyo already has a name and a family. Her father Fujimoto, a sorcerer who forsook his humanity to live underwater, searches frantically for his daughter Brunhilde. When found and captured, Ponyo rejects her birth name and declares that she wants to become a human. Using the power received from Sousuke's blood, she grows arms and legs and escapes to the surface once more. But the magic released into the ocean causes an imbalance in nature, causing the Moon to start falling out of orbit and the tides to grow dangerously stronger. Reunited with Ponyo, Sousuke must pass an ancient test to restore order in the world and let his companion live on as a human.`,
+    genre: 'Adventure / Fantasy'
+  },
+  {
+    id: 22,
+    title: 'Casshern Sins',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/8/23336.jpg',
+    description: `In a distant future, Earth has become a wasteland and humanity as we know it has died out. All that remains are sentient robots. They were supposed to be able to live forever—until the one called Luna died and the Ruin started. Their bodies will rust, and there is nothing that can be done to fix it. Now the robots are left only to contemplate their deaths, kept going only by the rumor that if they eat the one called Casshern, they will gain immortality.
+
+    Casshern knows nothing about his past, why he exists, or what he is, but he must find out, or he will face the constant torment of being hunted by robots who don't want to die. Casshern leaves death wherever he goes, but he must face it if he is to find out the truth of this world.
+    `,
+    genre: 'Action / Adventure / Drama / Sci - Fi / Psychological'
+  },
+  {
+    id: 23,
+    title: 'Trigun',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/7/20310.jpg',
+    description: `Vash the Stampede is the man with a $$60,000,000,000 bounty on his head. The reason: he's a merciless villain who lays waste to all those that oppose him and flattens entire cities for fun, garnering him the title "The Humanoid Typhoon." He leaves a trail of death and destruction wherever he goes, and anyone can count themselves dead if they so much as make eye contact—or so the rumors say. In actuality, Vash is a huge softie who claims to have never taken a life and avoids violence at all costs.
+
+    With his crazy doughnut obsession and buffoonish attitude in tow, Vash traverses the wasteland of the planet Gunsmoke, all the while followed by two insurance agents, Meryl Stryfe and Milly Thompson, who attempt to minimize his impact on the public. But soon, their misadventures evolve into life-or-death situations as a group of legendary assassins are summoned to bring about suffering to the trio. Vash's agonizing past will be unraveled and his morality and principles pushed to the breaking point.`,
+    genre: 'Action / Adventure / Sci - Fi'
+  },
+  {
+    id: 24,
+    title: 'Cowboy Bebop',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/4/19644.jpg',
+    description: `Crime is timeless. By the year 2071, humanity has expanded across the galaxy, filling the surface of other planets with settlements like those on Earth. These new societies are plagued by murder, drug use, and theft, and intergalactic outlaws are hunted by a growing number of tough bounty hunters.
+
+    Spike Spiegel and Jet Black pursue criminals throughout space to make a humble living. Beneath his goofy and aloof demeanor, Spike is haunted by the weight of his violent past. Meanwhile, Jet manages his own troubled memories while taking care of Spike and the Bebop, their ship. The duo is joined by the beautiful con artist Faye Valentine, odd child Edward Wong Hau Pepelu Tivrusky IV, and Ein, a bioengineered Welsh Corgi.
+    
+    While developing bonds and working to catch a colorful cast of criminals, the Bebop crew's lives are disrupted by a menace from Spike's past. As a rival's maniacal plot continues to unravel, Spike must choose between life with his newfound family or revenge for his old wounds.`,
+    genre: 'Action / Sci - Fi'
+  },
+  {
+    id: 25,
+    title: 'Samurai Champloo',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/1375/121599.jpg',
+    description: `Fuu Kasumi is a young and clumsy waitress who spends her days peacefully working in a small teahouse. That is, until she accidentally spills a drink all over one of her customers! With a group of samurai now incessantly harassing her, Fuu desperately calls upon another samurai in the shop, Mugen, who quickly defeats them with his wild fighting technique, utilizing movements reminiscent to that of breakdancing. Unfortunately, Mugen decides to pick a fight with the unwilling ronin Jin, who wields a more precise and traditional style of swordfighting, and the latter proves to be a formidable opponent. The only problem is, they end up destroying the entire shop as well as accidentally killing the local magistrate's son.
+
+    For their crime, the two samurai are captured and set to be executed. However, they are rescued by Fuu, who hires the duo as her bodyguards. Though she no longer has a place to return to, the former waitress wishes to find a certain samurai who smells of sunflowers and enlists the help of the now exonerated pair to do so. Despite initially disapproving of this idea, the two eventually agree to assist the girl in her quest; thus, the trio embark upon an adventure to find this mysterious warrior—that is, if Fuu can keep Mugen and Jin from killing each other.
+    
+    Set in an alternate Edo Period of Japan, Samurai Champloo follows the journey of these three eccentric individuals in an epic quest full of action, comedy, and dynamic sword fighting, all set to the beat of a unique hip-hop infused soundtrack.`,
+    genre: 'Action / Adventure / Historical / Comedy'
+  },
+  {
+    id: 26,
+    title: 'Afro Samurai',
+    imageUrl: 'https://cdn.myanimelist.net/images/anime/3/15874.jpg',
+    description: `When he was a young boy, Afro witnessed his father be cut down in a duel at the hands of a man known only as Justice. After taking the life of Afro's father, Justice cast aside his Number Two headband and took the Number One to claim its godly powers as his own.
+
+    Years later, having obtained the Number Two headband which grants him the right to challenge the Number One, Afro moves forward in his hunt for revenge on the man who murdered his father. There is just one thing that stands in his way—everyone else in the world! Though the Number One can only be challenged by the Number Two, the Number Two can be challenged by anyone. As his enemies gather to try and take the title of Number Two, Afro must fight through a myriad of foes and obstacles if he hopes to reach the Number One and claim vengeance once and for all.`,
+    genre: 'Action / Adventure / Gore'
   }
 ]
 

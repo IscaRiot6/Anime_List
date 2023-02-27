@@ -21,7 +21,7 @@ function Home({animeList, setAnimeList}) {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
   
-  // const [list, setList] = useState([])
+  
 
   const navigate = useNavigate();
 
@@ -39,7 +39,14 @@ function Home({animeList, setAnimeList}) {
     if (animeList.length === 0) {
       return <p>No anime found</p>;
     }
-  const sortedList = currentAnimeList.sort((a, b) => a.title.localeCompare(b.title))
+  const sortedList = currentAnimeList.sort((a, b) => {
+    if (a.title && b.title) {
+      return a.title.localeCompare(b.title);
+    } else {
+      return 0;
+    }
+  })
+
 
     return sortedList.map(item => {
       return (
@@ -116,6 +123,7 @@ function Home({animeList, setAnimeList}) {
                 </div>
                 <div>
                   <HomePagination
+                  
                   // className='home-pagination-container'
                   currentAnimeList={currentAnimeList}
                   currentPage={currentPage}
@@ -130,3 +138,6 @@ function Home({animeList, setAnimeList}) {
 }
 
 export default Home
+
+
+
