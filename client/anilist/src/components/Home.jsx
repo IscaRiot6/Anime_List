@@ -107,7 +107,7 @@ function Home({animeList, setAnimeList}) {
                 </form>
                 
                 <main className='anime-grid'>
-                <AnimePage animeList={animeList} />
+                {/* <AnimePage animeList={animeList} /> */}
                   {createAnimeList()}
                   </main>
                 </div>
