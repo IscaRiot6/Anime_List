@@ -1,0 +1,23 @@
+{
+  "name": "anime_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".server/server.js",
+  "scripts": {
+    "setup-production": "npm run install-client && npm run build-client && npm run install-server",
+    "install-client": "cd ./anilist && npm install",
+    "build-client": "cd ./anilist && npm run build",
+    "install-server": "cd ./server && npm install",
+    "start": "cd ./server && node server.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IscaRiot6/Anime_List.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IscaRiot6/Anime_List/issues"
+  },
+  "homepage": "https://github.com/IscaRiot6/Anime_List#readme"
+}
