@@ -2,12 +2,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import HeaderImg from '../assets/Header-1.jpg';
 import FavoritesNavBar from './FavoritesNavBar'
-import AnimePage from './AnimePage';
+// import AnimePage from './AnimePage';
 import HomePagination from './HomePagination';
 
 function Home({animeList, setAnimeList}) {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const itemsPerPage = 15;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -36,7 +36,7 @@ function Home({animeList, setAnimeList}) {
     setAnimeList(sortedList);
     // createAnimeList()
     // console.log(animeList)
-  }, [animeList])
+  }, [])
   
   
   const createAnimeList = () => {
