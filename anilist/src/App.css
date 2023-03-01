@@ -657,7 +657,7 @@ body.dark-mode {
 
 /* GENRES */
 
-.parent-container {
+/* .parent-container {
   margin: 0 auto;
   width: 80%;
   display: flex;
@@ -665,10 +665,10 @@ body.dark-mode {
 }
 
 .genreList-container {
-  /* scroll-padding-inline: 360px; */
+  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, calc(33.33% - 1rem)));
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  
   grid-gap: 1rem;
   align-items: center;
   text-align: center;
@@ -678,4 +678,8 @@ body.dark-mode {
 .genreList-container .genre-card {
   font-size: 14px;
   padding: 10px;
+} */
+
+.filter-container{
+  margin-top: 20px;
 }

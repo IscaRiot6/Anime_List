@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import FavoritesNavBar from './FavoritesNavBar'
 
 function Genres({ animeList }) {
   const [selectedGenre, setSelectedGenre] = useState('');
@@ -32,6 +33,12 @@ function Genres({ animeList }) {
 
   return (
     <section>
+        <div className='container'>
+        <nav>
+        <FavoritesNavBar>
+          
+        </FavoritesNavBar>
+      </nav>
       <div className='filter-container'>
         <label htmlFor='genre-select'>Filter by Genre: </label>
         <select id='genre-select' value={selectedGenre} onChange={handleGenreChange}>
@@ -46,6 +53,7 @@ function Genres({ animeList }) {
       <main className='container'>
       <div className='anime-grid'>{createAnimeList()}</div>
       </main>
+      </div>
     </section>
   );
 }
