@@ -19,7 +19,7 @@ const data = [
     The strong-willed Major Motoko Kusanagi of Section 9 spearheads a case involving a mysterious hacker known only as the "Puppet Master," who leaves a trail of victims stripped of their memories. Like many in this futuristic world, the Puppet Master's body is almost entirely robotic, giving them incredible power.
     
     As Motoko and her subordinates follow the enigmatic criminal's trail, other parties—including Section 6—start to get involved, forcing her to confront the extremely complicated nature of the case. Pondering about various philosophical questions, such as her own life's meaning, Motoko soon realizes that the one who will provide these answers is none other than the Puppet Master themself.`,
-    genre: 'Action / Mystery / Sci - fi / Suspense / Psychological'
+    genre: 'Action / Mystery / Sci - Fi / Suspense / Psychological'
   },
   {
     id: 3,
@@ -725,7 +725,7 @@ const data = [
     description: `In the light of day and in the dead of night, mysterious horrors await in the darkest shadows of every corner. They are unexplainable, inescapable, and undefeatable. Be prepared, or you may become their next victim.
 
     Sit back in terror as traumatizing tales of unparalleled terror unfold. Tales, such as that of a cursed jade carving that opens holes all over its victims' bodies; deep nightmares that span decades; an attractive spirit at a misty crossroad that grants cursed advice; and a slug that grows inside a girl's mouth. Tread carefully, for the horrifying supernatural tales of the Itou Junji: Collection are not for the faint of heart.`,
-    genre: 'Horror / Mystery / SUpernatural / Drama / Psychological'
+    genre: 'Horror / Mystery / Supernatural / Drama / Psychological'
   },
   {
     id: 75,
@@ -855,7 +855,7 @@ const data = [
     title: `Princess Mononoke`,
     imageUrl: 'https://cdn.myanimelist.net/images/anime/7/75919.jpg',
     description: `When an Emishi village is attacked by a fierce demon boar, the young prince Ashitaka puts his life at stake to defend his tribe. With its dying breath, the beast curses the prince's arm, granting him demonic powers while gradually siphoning his life away. Instructed by the village elders to travel westward for a cure, Ashitaka arrives at Tatara, the Iron Town, where he finds himself embroiled in a fierce conflict: Lady Eboshi of Tatara, promoting constant deforestation, stands against Princess San and the sacred spirits of the forest, who are furious at the destruction brought by the humans. As the opposing forces of nature and mankind begin to clash in a desperate struggle for survival, Ashitaka attempts to seek harmony between the two, all the while battling the latent demon inside of him. Princess Mononoke is a tale depicting the connection of technology and nature, while showing the path to harmony that could be achieved by mutual acceptance.`,
-    genre: ' Action, Adventure, Fantasy'
+    genre: ' Action / Adventure / Fantasy'
   },
   {
     id: 88,
@@ -944,7 +944,7 @@ const data = [
     While Jolyne's comrades fight for their lives, Pucci races to the Kennedy Space Center. There he hopes to enact his ultimate goal, one he believes God has entrusted to him. He aims to fulfill the will of the Joestars' blood enemy Dio Brando and—by robbing humanity of free will and making them slaves to fate—to create a world where all humans are blissfully happy.
     
     Unable to rely on the aid of her comatose father Joutarou, Jolyne must weaponize all she has learned in prison to confront Pucci in a climactic battle while the world itself hangs in the balance.`,
-    genre: 'Action / Adventure / supernatural'
+    genre: 'Action / Adventure / Supernatural'
   }
 ]
 
