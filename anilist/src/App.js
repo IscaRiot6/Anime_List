@@ -16,6 +16,7 @@ import Home from './components/Home'
 import Favorites from './components/Favorites'
 import AnimePage from './components/AnimePage'
 import './App.css'
+import Genres from './components/Genres'
 // import { ToastContainer } from 'react-toastify'
 // import 'react-toastify/dist/ReactToastify.css'
 // import axios from 'axios'
@@ -52,6 +53,11 @@ function App () {
               <Route path='/login' element={<Login />} />
 
               <Route path='/favorites' element={<Favorites />} />
+
+              <Route
+                path='/genres'
+                element={<Genres animeList={animeList} />}
+              />
 
               <Route
                 path='/home'
