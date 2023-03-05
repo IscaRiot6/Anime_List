@@ -54,14 +54,11 @@ const verifyUser = async (req, res) => {
   //decrypt the token and get ID
   jwt.verify(req.body.token, process.env.TOKEN_KEY, async (err, payload) => {
     if (payload) {
-      // console.log(payload)
       let user = await User.findOne({ _id: payload.id })
       res.send(user)
-      // const userId = payload.id
-      // res.json({ userId })
+      // console.log(user)
     } else {
       res.send({ message: 'session expired' })
-      // res.status(401).json({ message: 'Invalid token' })
     }
   })
 }

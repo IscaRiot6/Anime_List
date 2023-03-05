@@ -32,25 +32,14 @@ function FavoritesNavBar() {
           <Nav.Link as={Link} to="/genres">Genres</Nav.Link>
           {/* <Nav.Link onClick={handleDropdownClick}>Genres</Nav.Link> */}
           <Nav.Link href="favorites">Favorites</Nav.Link>
-          <Nav.Link href="#trending">Trending</Nav.Link>
+          
+          <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
           <Nav.Link className='logout-link' onClick={handleLogoutConfirmation}>Logout</Nav.Link>
         </Nav>
         <Nav>
           
         </Nav>
       </Navbar.Collapse>
-
-      <Dropdown show={open} onToggle={handleDropdownClick}>
-        <Dropdown.Toggle href="#" data-bs-toggle="dropdown" data-bs-target="#genres-dropdown" id="dropdown-genres" className="d-block d-lg-none">
-          Genres
-        </Dropdown.Toggle>
-        <Dropdown.Menu id="genres-dropdown">
-          <Dropdown.Item href="#genre1">Action / Adventure</Dropdown.Item>
-          
-          <Dropdown.Item href="#genre2">Drama / Psychological</Dropdown.Item>
-          <Dropdown.Item href="#genre3">Horror / Other</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
       </div>
     </Navbar>
   );

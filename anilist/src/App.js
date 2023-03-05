@@ -17,6 +17,7 @@ import Favorites from './components/Favorites'
 import AnimePage from './components/AnimePage'
 import './App.css'
 import Genres from './components/Genres'
+import Profile from './components/Profile'
 // import { ToastContainer } from 'react-toastify'
 // import 'react-toastify/dist/ReactToastify.css'
 // import axios from 'axios'
@@ -42,9 +43,11 @@ function App () {
   // }, [darkMode])
 
   return (
-    <div className={darkMode ? 'dark-mode' : ''}>
-      <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <div className='App'>
+    // <div className={darkMode ? 'dark-mode' : ''}>
+    //   <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+    <div className='App'>
+      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+        <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Router>
           <div>
             <Routes>
@@ -58,6 +61,8 @@ function App () {
                 path='/genres'
                 element={<Genres animeList={animeList} />}
               />
+
+              <Route path='/profile' element={<Profile />} />
 
               <Route
                 path='/home'

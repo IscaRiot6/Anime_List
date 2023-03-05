@@ -39,10 +39,11 @@ function Signup () {
   return (
     <section>
       <div className='container'>
-      <img className='logoImage' src={logoImg} alt='logo'></img>
+      {/* <img className='logoImage' src={logoImg} alt='logo'></img> */}
       <header className='signUp-header'><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr>.</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr></tr><tr>.</tr><tr></tr></header>
       <div className='register'>
         <div className='col-1'>
+          <div className='col-1-container'>
           <h2 id='test'>Sign Up</h2>
           <p className='test-2'>Register to enjoy <span><img className='logoImage' src={logoImg} alt='logo'></img></span></p>
           <form id='form' className='flex flex-col'>
@@ -86,6 +87,7 @@ function Signup () {
             <div>Already have an account? <a link='true' href='/login'>Login here </a> 
             </div>
           </form>
+          </div>
         </div>
         <div className='col-2'>
           <img src={BgImg} alt='Kakashi' />

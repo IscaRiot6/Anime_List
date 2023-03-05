@@ -21,9 +21,11 @@ app.use(
 
 const userRoute = require('./routes/userRoute')
 const anilistRoute = require('./routes/anilistRoute')
+// const profileRoute = require('./routes/profileRoute')
 
 app.use('/user', userRoute)
 app.use('/anime', anilistRoute)
+// app.use('/profile', profileRoute)
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`)

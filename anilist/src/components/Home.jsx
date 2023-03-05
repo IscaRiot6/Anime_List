@@ -7,7 +7,7 @@ import HomePagination from './HomePagination';
 
 function Home({animeList, setAnimeList}) {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 15;
+  const itemsPerPage = 16;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -92,7 +92,7 @@ function Home({animeList, setAnimeList}) {
   return (
     <section>
       <div className='container'>
-      {/* <div className=''><h1>Ani-List</h1></div> */}
+     
       <header style={{ backgroundImage: `url(${HeaderImg})` }}></header>
         <div className='navbar-container'>
          

@@ -5,11 +5,11 @@ import HomePagination from './HomePagination';
 
 function Genres({ animeList }) {
   const [selectedGenre, setSelectedGenre] = useState('');
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const itemsPerPage = 12;
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const itemsPerPage = 12;
 
-//   const indexOfLastItem = currentPage * itemsPerPage;
-//   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // const indexOfLastItem = currentPage * itemsPerPage;
+  // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 //   const currentItems = selectedGenre ? selectedGenre.animes.slice(indexOfFirstItem, indexOfLastItem) : [];
 
 
@@ -60,9 +60,9 @@ const filteredAnimeList = animeList.filter((anime) => {
                 </FavoritesNavBar>
             </nav>
             <div className='filter-container'>
-                <label htmlFor='genre-select'>Filter by Genre: </label>
-        
-                <select id='genre-select' value={selectedGenre} onChange=       {handleGenreChange}>
+                <label htmlFor='genre-select'>Choose a Genre: </label>                
+                <tr></tr>
+                <select id='genre-select' value={selectedGenre} onChange={handleGenreChange}>
                 <option value=''>All</option>
                 {uniqueGenres.map((genre) => (
                 <option key={genre} value={genre}>

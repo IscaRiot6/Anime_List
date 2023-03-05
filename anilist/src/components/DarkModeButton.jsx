@@ -14,11 +14,16 @@ import React from 'react';
 
 const DarkModeButton = ({ darkMode, toggleDarkMode, className }) => {
   return (
-    <button className={`dark-mode-button ${className} ${darkMode ? 'dark-mode' : 'light-mode'}`} onClick={toggleDarkMode}>
+    // <button className={`dark-mode-button ${className} ${darkMode ? 'dark-mode' : 'light-mode'}`} onClick={toggleDarkMode}>
+    //   {darkMode ? 'Light Mode' : 'Dark Mode'}
+    // </button>
+    <button className={` ${darkMode ? 'dark-mode-button' : 'light-mode-button'}`} onClick={toggleDarkMode}>
       {darkMode ? 'Light Mode' : 'Dark Mode'}
     </button>
   );
 };
 
 export default DarkModeButton;
+
+
 

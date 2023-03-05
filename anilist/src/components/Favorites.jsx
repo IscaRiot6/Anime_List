@@ -180,9 +180,7 @@ function Favorites () {
     {successMessage && (
       <div className='success-message'>{successMessage}</div>
     )}
-    <div className="form">
-      {/* <img className='logoImage' src={logoImg} alt='logo'></img> */}
-      {/* <h1>Your Ani-List</h1> */}
+    <div className="">
       <nav>
         <FavoritesNavBar>
           
@@ -190,7 +188,7 @@ function Favorites () {
       </nav>
       <p>Save here your favorite anime</p>
       
-      <form className='form-2'>
+      <form className='favorites-form'>
         <input
         placeholder='title'
         onChange={e => {
@@ -215,18 +213,19 @@ function Favorites () {
           setImageUrl(e.target.value)
         }}
         />
-        <button onClick={addAnime}>Add Anime</button>
-        
+        <button className='addAnime-btn' onClick={addAnime}>Add Anime</button>
+        </form>
         
           <div className='search-container'>
             <input
-            id='search-anime'
+            id='favorites-search-anime'
             placeholder='Search anime'
             value={searchValue}
             onChange={e => {
             setSearchValue(e.target.value)
             }}
             />
+            
           </div>
     
       <main className='anime-table'>
@@ -338,7 +337,7 @@ function Favorites () {
         </div>
       )}
       
-    </form>
+    
     
     <div className='pagination-container'>
       <ul>
