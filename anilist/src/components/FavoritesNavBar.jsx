@@ -32,8 +32,8 @@ function FavoritesNavBar() {
           <Nav.Link as={Link} to="/genres">Genres</Nav.Link>
           {/* <Nav.Link onClick={handleDropdownClick}>Genres</Nav.Link> */}
           <Nav.Link href="favorites">Favorites</Nav.Link>
-          
-          <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+          <Nav.Link as={Link} to="/about">About</Nav.Link>
+          {/* <Nav.Link as={Link} to="/profile">Profile</Nav.Link> */}
           <Nav.Link className='logout-link' onClick={handleLogoutConfirmation}>Logout</Nav.Link>
         </Nav>
         <Nav>

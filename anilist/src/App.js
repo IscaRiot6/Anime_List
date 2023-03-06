@@ -24,6 +24,7 @@ import Profile from './components/Profile'
 import { useState, useEffect } from 'react'
 
 import DarkModeButton from './components/DarkModeButton' // entry
+import About from './components/About'
 
 function App () {
   const [animeList, setAnimeList] = useState(DataBase)
@@ -63,6 +64,8 @@ function App () {
               />
 
               <Route path='/profile' element={<Profile />} />
+
+              <Route path='/about' element={<About />} />
 
               <Route
                 path='/home'
