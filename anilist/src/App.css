@@ -111,6 +111,27 @@ body{
   /* width: 50%; */
 }
 
+.random-image {
+  width: fit-content;
+  height: min-content;
+  display: flex;
+  width: 50%;
+  margin: auto;
+  align-items: center;
+  justify-content: flex-end ;
+}
+
+.random-image img{
+  width:100%;
+  max-width: fit-content;
+  /* height: 100%;
+  max-height: fit-content; */
+  object-fit: contain;
+  /* align-self: flex-end; */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .register .col-2 img{
   /* width:100%; */
   /* max-width: fit-content; */

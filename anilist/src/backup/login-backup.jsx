@@ -70,10 +70,8 @@ function Login () {
           </form>
           </div>
         </div>
-        {/* <div className='col-2 random-image'> */}
-        <div className='random-image'>
-          {/* <img src={Ryuk} alt='' /> */}
-          <RandomImageGenerator />
+        <div className='col-2'>
+          <img src={Ryuk} alt='' />
         </div>
       </div>
       <footer className='signUp-footer'><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr>.</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>.</tr><tr></tr><tr>.</tr><tr></tr></footer>
