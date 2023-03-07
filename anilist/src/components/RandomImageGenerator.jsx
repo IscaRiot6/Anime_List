@@ -5,6 +5,7 @@ function RandomImageGenerator() {
 
     const renderImage = () => {
         const Images = [
+            { image: `https://wallpapercave.com/dwp1x/wp9909496.jpg`},
             { image: 'https://wallpapercave.com/dwp1x/wp4676900.jpg' },
             { image: 'https://wallpapercave.com/dwp1x/DhIaAEA.jpg' },
             { image: 'https://wallpapercave.com/dwp1x/4whOLMX.jpg' },

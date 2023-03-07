@@ -4,7 +4,6 @@ import axios from 'axios'
 import BgImg from '../assets/img1.jpg'
 import logoImg from '../assets/logo.jpg'
 import RandomImageGenerator from './RandomImageGenerator'
-import RandomImageGeneratorSignUp from './RandomImageGeneratorSignUp'
 
 
 function Signup () {
@@ -92,8 +91,7 @@ function Signup () {
           </div>
         </div>
         <div className='col-2'>
-          {/* <img src={BgImg} alt='Kakashi' /> */}
-          <RandomImageGeneratorSignUp />
+          <img src={BgImg} alt='Kakashi' />
         </div>
         
       </div>
