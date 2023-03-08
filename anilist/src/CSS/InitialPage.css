@@ -46,6 +46,10 @@
     width: 100%;
     height: auto;
   }
+
+  .intro {
+    margin-top: 20px;
+  }
   
   .intro h2 {
     font-size: 24px;
@@ -90,7 +94,7 @@
   }
 
   .banner img{
-    max-height: 270px;
+    max-height: 250px;
     transition: transform 0.5s;
   }
 
