@@ -1,0 +1,99 @@
+.left-section {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+  }
+  
+  .image-table {
+    background: linear-gradient(to right, #8f8fc0, #409aa0, #423883);
+    border: 1px solid #ccc;
+    width: 100%;
+    table-layout: fixed;
+    
+  }
+  
+  .image-table td {
+    padding: 5px;
+  }
+  
+  .image-table img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s;
+  }
+
+  .image-table img:hover {
+    transform: scale(1.1);
+  }
+  
+  .right-section {
+    
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+  }
+  
+  .border {
+    background: linear-gradient(to right, #8f8fc0, #409aa0, #423883);
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .intro h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .intro p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .InitialPageButtons button {
+    background-color: #009688;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .InitialPageButtons button:hover {
+    background-color: #008080;
+  }
+  
+  .InitialPageButtons div {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .links a {
+    display: block;
+    margin-bottom: 5px;
+    color: #009688;
+    font-size: 16px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+    background-color: #008080;
+  }
+
+  .banner img{
+    max-height: 270px;
+    transition: transform 0.5s;
+  }
+
+  .banner img:hover{
+    transform: translateX(-30px) scale(1.1);
+  }

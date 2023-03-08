@@ -65,7 +65,7 @@ function Login () {
             >
               Log in
             </button>
-            <div>Don't have an account? <a link='true' href='/'>Sign-Up here </a> 
+            <div>Don't have an account? <a link='true' href='/signup'>Sign-Up here </a> 
             </div>
           </form>
           </div>

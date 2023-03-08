@@ -18,6 +18,7 @@ import AnimePage from './components/AnimePage'
 import './App.css'
 import Genres from './components/Genres'
 import Profile from './components/Profile'
+import InitialPage from './components/InitialPage'
 // import { ToastContainer } from 'react-toastify'
 // import 'react-toastify/dist/ReactToastify.css'
 // import axios from 'axios'
@@ -52,7 +53,9 @@ function App () {
         <Router>
           <div>
             <Routes>
-              <Route path='/' element={<Signup />} />
+              <Route path='/' element={<InitialPage />} />
+
+              <Route path='/signup' element={<Signup />} />
 
               <Route path='/login' element={<Login />} />
 
