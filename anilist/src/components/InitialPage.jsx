@@ -64,6 +64,7 @@ import image2 from '../assets/img16.webp'
 import image3 from '../assets/img17.webp'
 import image4 from '../assets/img18.webp'
 import image5 from '../assets/footer1.png'
+import Banner from './Banner';
 
 import '../CSS/InitialPage.css';
 import logoImg from '../assets/logo.jpg'
@@ -98,9 +99,10 @@ const InitialPage = () => {
       </div>
       <div className="right-section">
         <div className="border">
-          <div className="banner">
+            <Banner/>
+          {/* <div className='banner'>
             <img src={image5} alt="Anime Banner" />
-          </div>
+          </div> */}
           <div className="intro">
             <h2>Welcome to <span><img className='logoImage' src={logoImg} alt='logo'></img></span></h2>
             <p>Keep track of all your favorite anime in one place.</p>
