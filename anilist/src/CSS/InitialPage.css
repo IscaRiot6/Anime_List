@@ -62,7 +62,7 @@
   }
   
   .InitialPageButtons button {
-    background-color: #009688;
+    background-color: blue;
     color: #fff;
     font-size: 16px;
     padding: 10px;
@@ -84,13 +84,13 @@
   .links a {
     display: block;
     margin-bottom: 5px;
-    color: #009688;
+    color: blue;
     font-size: 16px;
   }
   
   .links a:hover {
     text-decoration: underline;
-    background-color: #008080;
+    color: #008080;
   }
 
   .banner img{
